@@ -20,6 +20,15 @@ var skipClasses = []string{
 	"command",
 }
 
+// Only assume {"type": "dict"} to be the receiver (eg. "user" in "user_add")
+// for the following commands.
+var dictResultCommands = []string{
+	"add",
+	"find",
+	"mod",
+	"show",
+}
+
 func main() {
 	if e := actualMain(); e != nil {
 		log.Fatalf("%v", e)
@@ -61,8 +70,17 @@ func loadSchema() (*Schema, error) {
 			}
 		}
 		if !skip {
-			// HACK FreeIPA does not return the correct type on deletions.
-			if c.AttrName == "del" {
+			// HACK Many result values for FreeIPA methods
+			// have {"type": "dict"}. Often this means the type
+			// of the receiver (eg. "user" in "user_add"), but not
+			// always. Limit this guessing to whitelisted method types.
+			var guessDictRes bool
+			for _, v := range dictResultCommands {
+				if c.AttrName == v {
+					guessDictRes = true
+				}
+			}
+			if !guessDictRes {
 				for _, p := range c.Output {
 					if p.Name == "result" && p.Type == "dict" {
 						p.Type = "interface{}"
@@ -101,6 +119,15 @@ func loadSchema() (*Schema, error) {
 				if p.Type == "bool" {
 					v := false
 					p.RequiredRaw = &v
+				}
+			}
+
+			// HACK Fields starting with "member_" generally seem to be multivalued,
+			// even though the schema doesn't say so. Assuming they are multivalued
+			// will work even if they end up actually being single-valued.
+			for _, p := range c.Params {
+				if strings.HasPrefix(p.Name, "member_") {
+					p.Multivalue = true
 				}
 			}
 
