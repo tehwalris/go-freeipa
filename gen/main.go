@@ -80,10 +80,10 @@ func loadSchema() (*Schema, error) {
 					guessDictRes = true
 				}
 			}
-			if !guessDictRes {
+			if guessDictRes {
 				for _, p := range c.Output {
 					if p.Name == "result" && p.Type == "dict" {
-						p.Type = "interface{}"
+						p.Type = "dict_guess_receiver"
 					}
 				}
 			}
@@ -122,11 +122,11 @@ func loadSchema() (*Schema, error) {
 				}
 			}
 
-			// HACK Fields starting with "member_" generally seem to be multivalued,
+			// HACK Fields starting with "member_" or "memberof_" generally seem to be multivalued,
 			// even though the schema doesn't say so. Assuming they are multivalued
 			// will work even if they end up actually being single-valued.
 			for _, p := range c.Params {
-				if strings.HasPrefix(p.Name, "member_") {
+				if strings.HasPrefix(p.Name, "member_") || strings.HasPrefix(p.Name, "memberof_") {
 					p.Multivalue = true
 				}
 			}

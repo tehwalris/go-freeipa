@@ -55,7 +55,7 @@ func toGoType(ipaType string) string {
 }
 
 func (t *CommandOutput) GoType(parent *Command) string {
-	if t.Type == "dict" {
+	if t.Type == "dict_guess_receiver" {
 		cls := strings.Split(parent.ObjClass, "/")[0]
 		if cls != "" {
 			return upperName(cls)
