@@ -841,7 +841,7 @@ type AciRenameResult struct {
 
 	   (required)
 	*/
-	Result Aci `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -1315,7 +1315,7 @@ type AutomemberAddConditionResult struct {
 
 	   (required)
 	*/
-	Result Automember `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -1327,7 +1327,7 @@ type AutomemberAddConditionResult struct {
 	Conditions that could not be added
 	    (required)
 	*/
-	Failed Automember `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of conditions added
@@ -1442,7 +1442,7 @@ type AutomemberDefaultGroupRemoveResult struct {
 
 	   (required)
 	*/
-	Result AutomemberDefaultGroup `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 
@@ -1563,7 +1563,7 @@ type AutomemberDefaultGroupSetResult struct {
 
 	   (required)
 	*/
-	Result AutomemberDefaultGroup `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 
@@ -2178,7 +2178,7 @@ type AutomemberRebuildResult struct {
 
 	   (required)
 	*/
-	Result AutomemberTask `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -2317,7 +2317,7 @@ type AutomemberRemoveConditionResult struct {
 
 	   (required)
 	*/
-	Result Automember `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -2329,7 +2329,7 @@ type AutomemberRemoveConditionResult struct {
 	Conditions that could not be removed
 	    (required)
 	*/
-	Failed Automember `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of conditions removed
@@ -3993,7 +3993,7 @@ type AutomountmapAddIndirectResult struct {
 
 	   (required)
 	*/
-	Result Automountmap `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -5747,13 +5747,13 @@ type CaaclAddCaResult struct {
 
 	   (required)
 	*/
-	Result Caacl `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Caacl `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -5874,13 +5874,13 @@ type CaaclAddHostResult struct {
 
 	   (required)
 	*/
-	Result Caacl `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Caacl `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -5995,13 +5995,13 @@ type CaaclAddProfileResult struct {
 
 	   (required)
 	*/
-	Result Caacl `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Caacl `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -6116,13 +6116,13 @@ type CaaclAddServiceResult struct {
 
 	   (required)
 	*/
-	Result Caacl `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Caacl `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -6243,13 +6243,13 @@ type CaaclAddUserResult struct {
 
 	   (required)
 	*/
-	Result Caacl `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Caacl `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -7027,13 +7027,13 @@ type CaaclRemoveCaResult struct {
 
 	   (required)
 	*/
-	Result Caacl `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Caacl `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -7154,13 +7154,13 @@ type CaaclRemoveHostResult struct {
 
 	   (required)
 	*/
-	Result Caacl `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Caacl `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -7275,13 +7275,13 @@ type CaaclRemoveProfileResult struct {
 
 	   (required)
 	*/
-	Result Caacl `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Caacl `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -7396,13 +7396,13 @@ type CaaclRemoveServiceResult struct {
 
 	   (required)
 	*/
-	Result Caacl `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Caacl `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -7523,13 +7523,13 @@ type CaaclRemoveUserResult struct {
 
 	   (required)
 	*/
-	Result Caacl `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Caacl `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -8146,7 +8146,7 @@ type CertRequestResult struct {
 
 	   (required)
 	*/
-	Result Certreq `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -8485,7 +8485,7 @@ type CertStatusResult struct {
 
 	   (required)
 	*/
-	Result Certreq `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -8861,7 +8861,7 @@ type CertprofileImportResult struct {
 
 	   (required)
 	*/
-	Result Certprofile `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -11574,7 +11574,7 @@ type DNSUpdateSystemRecordsResult struct {
 
 	   (required)
 	*/
-	Result DNSSystemRecords `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Result of the command
@@ -13987,7 +13987,7 @@ type DnsrecordDelentryResult struct {
 	List of deletions that failed
 	    (required)
 	*/
-	Result Dnsrecord `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 
@@ -17473,13 +17473,13 @@ type GroupAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Group `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Group `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -18238,13 +18238,13 @@ type GroupRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Group `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Group `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -18663,13 +18663,13 @@ type HbacruleAddHostResult struct {
 
 	   (required)
 	*/
-	Result Hbacrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Hbacrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -18790,13 +18790,13 @@ type HbacruleAddServiceResult struct {
 
 	   (required)
 	*/
-	Result Hbacrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Hbacrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -18917,13 +18917,13 @@ type HbacruleAddSourcehostResult struct {
 
 	   (required)
 	*/
-	Result Hbacrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Hbacrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -19044,13 +19044,13 @@ type HbacruleAddUserResult struct {
 
 	   (required)
 	*/
-	Result Hbacrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Hbacrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -19846,13 +19846,13 @@ type HbacruleRemoveHostResult struct {
 
 	   (required)
 	*/
-	Result Hbacrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Hbacrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -19973,13 +19973,13 @@ type HbacruleRemoveServiceResult struct {
 
 	   (required)
 	*/
-	Result Hbacrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Hbacrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -20100,13 +20100,13 @@ type HbacruleRemoveSourcehostResult struct {
 
 	   (required)
 	*/
-	Result Hbacrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Hbacrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -20227,13 +20227,13 @@ type HbacruleRemoveUserResult struct {
 
 	   (required)
 	*/
-	Result Hbacrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Hbacrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -21257,13 +21257,13 @@ type HbacsvcgroupAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Hbacsvcgroup `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Hbacsvcgroup `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -21775,13 +21775,13 @@ type HbacsvcgroupRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Hbacsvcgroup `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Hbacsvcgroup `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -22429,7 +22429,7 @@ type HostAddCertResult struct {
 
 	   (required)
 	*/
-	Result Host `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -22544,13 +22544,13 @@ type HostAddManagedbyResult struct {
 
 	   (required)
 	*/
-	Result Host `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Host `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -22671,7 +22671,7 @@ type HostAddPrincipalResult struct {
 
 	   (required)
 	*/
-	Result Host `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -22804,13 +22804,13 @@ type HostAllowCreateKeytabResult struct {
 
 	   (required)
 	*/
-	Result Host `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Host `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -22943,13 +22943,13 @@ type HostAllowRetrieveKeytabResult struct {
 
 	   (required)
 	*/
-	Result Host `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Host `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -23288,13 +23288,13 @@ type HostDisallowCreateKeytabResult struct {
 
 	   (required)
 	*/
-	Result Host `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Host `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -23427,13 +23427,13 @@ type HostDisallowRetrieveKeytabResult struct {
 
 	   (required)
 	*/
-	Result Host `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Host `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -24106,7 +24106,7 @@ type HostRemoveCertResult struct {
 
 	   (required)
 	*/
-	Result Host `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -24221,13 +24221,13 @@ type HostRemoveManagedbyResult struct {
 
 	   (required)
 	*/
-	Result Host `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Host `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -24348,7 +24348,7 @@ type HostRemovePrincipalResult struct {
 
 	   (required)
 	*/
-	Result Host `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -24731,13 +24731,13 @@ type HostgroupAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Hostgroup `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Hostgroup `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -25327,13 +25327,13 @@ type HostgroupRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Hostgroup `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Hostgroup `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -26586,7 +26586,7 @@ type IdoverrideuserAddCertResult struct {
 
 	   (required)
 	*/
-	Result Idoverrideuser `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -27236,7 +27236,7 @@ type IdoverrideuserRemoveCertResult struct {
 
 	   (required)
 	*/
-	Result Idoverrideuser `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -28369,13 +28369,13 @@ type IdviewApplyResult struct {
 	Hosts that this ID View was applied to.
 	    (required)
 	*/
-	Succeeded Idview `json:"succeeded,omitempty"`
+	Succeeded interface{} `json:"succeeded,omitempty"`
 
 	/*
 	Hosts or hostgroups that this ID View could not be applied to.
 	    (required)
 	*/
-	Failed Idview `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of hosts the ID View was applied to:
@@ -28990,13 +28990,13 @@ type IdviewUnapplyResult struct {
 	Hosts that ID View was cleared from.
 	    (required)
 	*/
-	Succeeded Idview `json:"succeeded,omitempty"`
+	Succeeded interface{} `json:"succeeded,omitempty"`
 
 	/*
 	Hosts or hostgroups that ID View could not be cleared from.
 	    (required)
 	*/
-	Failed Idview `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of hosts that had a ID View was unset:
@@ -29542,7 +29542,7 @@ type KrbtpolicyResetResult struct {
 
 	   (required)
 	*/
-	Result Krbtpolicy `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -30293,7 +30293,7 @@ type LocationShowResult struct {
 	Servers in location
 	    (required)
 	*/
-	Servers Location `json:"servers,omitempty"`
+	Servers interface{} `json:"servers,omitempty"`
 }
 
 func (t *LocationShowResult) String() string {
@@ -30808,13 +30808,13 @@ type NetgroupAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Netgroup `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Netgroup `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -31488,13 +31488,13 @@ type NetgroupRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Netgroup `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Netgroup `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -32219,13 +32219,13 @@ type OtptokenAddManagedbyResult struct {
 
 	   (required)
 	*/
-	Result Otptoken `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Otptoken `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -32863,13 +32863,13 @@ type OtptokenRemoveManagedbyResult struct {
 
 	   (required)
 	*/
-	Result Otptoken `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Otptoken `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -33913,13 +33913,13 @@ type PermissionAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Permission `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Permission `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -34040,7 +34040,7 @@ type PermissionAddNoaciResult struct {
 
 	   (required)
 	*/
-	Result Permission `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -34762,13 +34762,13 @@ type PermissionRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Permission `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Permission `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -35406,13 +35406,13 @@ type PrivilegeAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Privilege `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Privilege `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -35527,13 +35527,13 @@ type PrivilegeAddPermissionResult struct {
 
 	   (required)
 	*/
-	Result Privilege `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Privilege `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of permissions added
@@ -36051,13 +36051,13 @@ type PrivilegeRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Privilege `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Privilege `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -36172,13 +36172,13 @@ type PrivilegeRemovePermissionResult struct {
 
 	   (required)
 	*/
-	Result Privilege `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Privilege `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of permissions removed
@@ -38330,13 +38330,13 @@ type RoleAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Role `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Role `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -38451,13 +38451,13 @@ type RoleAddPrivilegeResult struct {
 
 	   (required)
 	*/
-	Result Role `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Role `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of privileges added
@@ -38999,13 +38999,13 @@ type RoleRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Role `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Role `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -39120,13 +39120,13 @@ type RoleRemovePrivilegeResult struct {
 
 	   (required)
 	*/
-	Result Role `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Role `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of privileges removed
@@ -40200,13 +40200,13 @@ type SelinuxusermapAddHostResult struct {
 
 	   (required)
 	*/
-	Result Selinuxusermap `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Selinuxusermap `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -40327,13 +40327,13 @@ type SelinuxusermapAddUserResult struct {
 
 	   (required)
 	*/
-	Result Selinuxusermap `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Selinuxusermap `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -41105,13 +41105,13 @@ type SelinuxusermapRemoveHostResult struct {
 
 	   (required)
 	*/
-	Result Selinuxusermap `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Selinuxusermap `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -41232,13 +41232,13 @@ type SelinuxusermapRemoveUserResult struct {
 
 	   (required)
 	*/
-	Result Selinuxusermap `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Selinuxusermap `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -42587,7 +42587,7 @@ type ServiceAddCertResult struct {
 
 	   (required)
 	*/
-	Result Service `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -42702,13 +42702,13 @@ type ServiceAddHostResult struct {
 
 	   (required)
 	*/
-	Result Service `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Service `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -42829,7 +42829,7 @@ type ServiceAddPrincipalResult struct {
 
 	   (required)
 	*/
-	Result Service `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -42962,13 +42962,13 @@ type ServiceAllowCreateKeytabResult struct {
 
 	   (required)
 	*/
-	Result Service `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Service `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -43101,13 +43101,13 @@ type ServiceAllowRetrieveKeytabResult struct {
 
 	   (required)
 	*/
-	Result Service `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Service `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -43440,13 +43440,13 @@ type ServiceDisallowCreateKeytabResult struct {
 
 	   (required)
 	*/
-	Result Service `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Service `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -43579,13 +43579,13 @@ type ServiceDisallowRetrieveKeytabResult struct {
 
 	   (required)
 	*/
-	Result Service `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Service `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -44060,7 +44060,7 @@ type ServiceRemoveCertResult struct {
 
 	   (required)
 	*/
-	Result Service `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -44175,13 +44175,13 @@ type ServiceRemoveHostResult struct {
 
 	   (required)
 	*/
-	Result Service `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Service `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -44302,7 +44302,7 @@ type ServiceRemovePrincipalResult struct {
 
 	   (required)
 	*/
-	Result Service `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -44673,13 +44673,13 @@ type ServicedelegationruleAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Servicedelegationrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Servicedelegationrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -44794,13 +44794,13 @@ type ServicedelegationruleAddTargetResult struct {
 
 	   (required)
 	*/
-	Result Servicedelegationrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Servicedelegationrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -45158,13 +45158,13 @@ type ServicedelegationruleRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Servicedelegationrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Servicedelegationrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -45279,13 +45279,13 @@ type ServicedelegationruleRemoveTargetResult struct {
 
 	   (required)
 	*/
-	Result Servicedelegationrule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Servicedelegationrule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -45638,13 +45638,13 @@ type ServicedelegationtargetAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Servicedelegationtarget `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Servicedelegationtarget `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -45990,13 +45990,13 @@ type ServicedelegationtargetRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Servicedelegationtarget `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Servicedelegationtarget `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -46384,7 +46384,7 @@ type StageuserActivateResult struct {
 
 	   (required)
 	*/
-	Result Stageuser `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -46856,13 +46856,13 @@ type StageuserAddManagerResult struct {
 
 	   (required)
 	*/
-	Result Stageuser `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Stageuser `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -47860,13 +47860,13 @@ type StageuserRemoveManagerResult struct {
 
 	   (required)
 	*/
-	Result Stageuser `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Stageuser `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -48890,13 +48890,13 @@ type SudocmdgroupAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Sudocmdgroup `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Sudocmdgroup `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -49408,13 +49408,13 @@ type SudocmdgroupRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Sudocmdgroup `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Sudocmdgroup `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -49857,13 +49857,13 @@ type SudoruleAddAllowCommandResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -49984,13 +49984,13 @@ type SudoruleAddDenyCommandResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -50117,13 +50117,13 @@ type SudoruleAddHostResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -50244,7 +50244,7 @@ type SudoruleAddOptionResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -50359,13 +50359,13 @@ type SudoruleAddRunasgroupResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -50486,13 +50486,13 @@ type SudoruleAddRunasuserResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -50613,13 +50613,13 @@ type SudoruleAddUserResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -51439,13 +51439,13 @@ type SudoruleRemoveAllowCommandResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -51566,13 +51566,13 @@ type SudoruleRemoveDenyCommandResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -51699,13 +51699,13 @@ type SudoruleRemoveHostResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -51826,7 +51826,7 @@ type SudoruleRemoveOptionResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -51941,13 +51941,13 @@ type SudoruleRemoveRunasgroupResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -52068,13 +52068,13 @@ type SudoruleRemoveRunasuserResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -52195,13 +52195,13 @@ type SudoruleRemoveUserResult struct {
 
 	   (required)
 	*/
-	Result Sudorule `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Sudorule `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -54572,7 +54572,7 @@ type TrustFetchDomainsResult struct {
 
 	   (required)
 	*/
-	Result []Trust `json:"result,omitempty"`
+	Result []interface{} `json:"result,omitempty"`
 
 	/*
 	Number of entries returned
@@ -56614,7 +56614,7 @@ type UserAddCertResult struct {
 
 	   (required)
 	*/
-	Result User `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -56729,13 +56729,13 @@ type UserAddManagerResult struct {
 
 	   (required)
 	*/
-	Result User `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed User `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -56856,7 +56856,7 @@ type UserAddPrincipalResult struct {
 
 	   (required)
 	*/
-	Result User `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -58084,7 +58084,7 @@ type UserRemoveCertResult struct {
 
 	   (required)
 	*/
-	Result User `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -58199,13 +58199,13 @@ type UserRemoveManagerResult struct {
 
 	   (required)
 	*/
-	Result User `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed User `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -58326,7 +58326,7 @@ type UserRemovePrincipalResult struct {
 
 	   (required)
 	*/
-	Result User `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -58556,7 +58556,7 @@ type UserStageResult struct {
 	List of deletions that failed
 	    (required)
 	*/
-	Result User `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 
@@ -59060,7 +59060,7 @@ type VaultAddInternalResult struct {
 
 	   (required)
 	*/
-	Result Vault `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -59205,13 +59205,13 @@ type VaultAddMemberResult struct {
 
 	   (required)
 	*/
-	Result Vault `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be added
 	    (required)
 	*/
-	Failed Vault `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members added
@@ -59356,13 +59356,13 @@ type VaultAddOwnerResult struct {
 
 	   (required)
 	*/
-	Result Vault `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Owners that could not be added
 	    (required)
 	*/
-	Failed Vault `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of owners added
@@ -59507,7 +59507,7 @@ type VaultArchiveInternalResult struct {
 
 	   (required)
 	*/
-	Result Vault `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -59994,7 +59994,7 @@ type VaultModInternalResult struct {
 
 	   (required)
 	*/
-	Result Vault `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -60139,13 +60139,13 @@ type VaultRemoveMemberResult struct {
 
 	   (required)
 	*/
-	Result Vault `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Members that could not be removed
 	    (required)
 	*/
-	Failed Vault `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of members removed
@@ -60290,13 +60290,13 @@ type VaultRemoveOwnerResult struct {
 
 	   (required)
 	*/
-	Result Vault `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Owners that could not be removed
 	    (required)
 	*/
-	Failed Vault `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of owners removed
@@ -60429,7 +60429,7 @@ type VaultRetrieveInternalResult struct {
 
 	   (required)
 	*/
-	Result Vault `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	The primary_key value of the entry, e.g. 'jdoe' for a user
@@ -60816,13 +60816,13 @@ type VaultcontainerAddOwnerResult struct {
 
 	   (required)
 	*/
-	Result Vaultcontainer `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Owners that could not be added
 	    (required)
 	*/
-	Failed Vaultcontainer `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of owners added
@@ -61076,13 +61076,13 @@ type VaultcontainerRemoveOwnerResult struct {
 
 	   (required)
 	*/
-	Result Vaultcontainer `json:"result,omitempty"`
+	Result interface{} `json:"result,omitempty"`
 
 	/*
 	Owners that could not be removed
 	    (required)
 	*/
-	Failed Vaultcontainer `json:"failed,omitempty"`
+	Failed interface{} `json:"failed,omitempty"`
 
 	/*
 	Number of owners removed
@@ -77855,43 +77855,43 @@ type Group struct {
 	Member users
 
 	*/
-	MemberUser *string `json:"member_user,omitempty"`
+	MemberUser *[]string `json:"member_user,omitempty"`
 
 	/*
 	Member groups
 
 	*/
-	MemberGroup *string `json:"member_group,omitempty"`
+	MemberGroup *[]string `json:"member_group,omitempty"`
 
 	/*
 	Member of groups
 
 	*/
-	MemberofGroup *string `json:"memberof_group,omitempty"`
+	MemberofGroup *[]string `json:"memberof_group,omitempty"`
 
 	/*
 	Roles
 
 	*/
-	MemberofRole *string `json:"memberof_role,omitempty"`
+	MemberofRole *[]string `json:"memberof_role,omitempty"`
 
 	/*
 	Member of netgroups
 
 	*/
-	MemberofNetgroup *string `json:"memberof_netgroup,omitempty"`
+	MemberofNetgroup *[]string `json:"memberof_netgroup,omitempty"`
 
 	/*
 	Member of Sudo rule
 
 	*/
-	MemberofSudorule *string `json:"memberof_sudorule,omitempty"`
+	MemberofSudorule *[]string `json:"memberof_sudorule,omitempty"`
 
 	/*
 	Member of HBAC rule
 
 	*/
-	MemberofHbacrule *string `json:"memberof_hbacrule,omitempty"`
+	MemberofHbacrule *[]string `json:"memberof_hbacrule,omitempty"`
 
 	/*
 	Indirect Member users
@@ -78159,15 +78159,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberUser = &plainV
+			out.MemberUser = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberUser = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberUser: %v; expected at most one element", raw)
-			}
-
+			out.MemberUser = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberUser: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -78196,15 +78191,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberGroup = &plainV
+			out.MemberGroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberGroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberGroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberGroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberGroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -78233,15 +78223,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofGroup = &plainV
+			out.MemberofGroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofGroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofGroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofGroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofGroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -78270,15 +78255,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofRole = &plainV
+			out.MemberofRole = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofRole = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofRole: %v; expected at most one element", raw)
-			}
-
+			out.MemberofRole = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofRole: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -78307,15 +78287,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofNetgroup = &plainV
+			out.MemberofNetgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofNetgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofNetgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofNetgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -78344,15 +78319,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofSudorule = &plainV
+			out.MemberofSudorule = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofSudorule = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofSudorule: %v; expected at most one element", raw)
-			}
-
+			out.MemberofSudorule = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofSudorule: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -78381,15 +78351,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofHbacrule = &plainV
+			out.MemberofHbacrule = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofHbacrule = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofHbacrule: %v; expected at most one element", raw)
-			}
-
+			out.MemberofHbacrule = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofHbacrule: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -79457,7 +79422,7 @@ type Hbacsvc struct {
 	Member of HBAC service groups
 
 	*/
-	MemberofHbacsvcgroup *string `json:"memberof_hbacsvcgroup,omitempty"`
+	MemberofHbacsvcgroup *[]string `json:"memberof_hbacsvcgroup,omitempty"`
 }
 
 func (t *Hbacsvc) String() string {
@@ -79580,15 +79545,10 @@ func (out *Hbacsvc) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofHbacsvcgroup = &plainV
+			out.MemberofHbacsvcgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofHbacsvcgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofHbacsvcgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofHbacsvcgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofHbacsvcgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -79615,7 +79575,7 @@ type Hbacsvcgroup struct {
 	Member HBAC service
 
 	*/
-	MemberHbacsvc *string `json:"member_hbacsvc,omitempty"`
+	MemberHbacsvc *[]string `json:"member_hbacsvc,omitempty"`
 }
 
 func (t *Hbacsvcgroup) String() string {
@@ -79738,15 +79698,10 @@ func (out *Hbacsvcgroup) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberHbacsvc = &plainV
+			out.MemberHbacsvc = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberHbacsvc = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberHbacsvc: %v; expected at most one element", raw)
-			}
-
+			out.MemberHbacsvc = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberHbacsvc: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -79947,31 +79902,31 @@ type Host struct {
 	Member of host-groups
 
 	*/
-	MemberofHostgroup *string `json:"memberof_hostgroup,omitempty"`
+	MemberofHostgroup *[]string `json:"memberof_hostgroup,omitempty"`
 
 	/*
 	Roles
 
 	*/
-	MemberofRole *string `json:"memberof_role,omitempty"`
+	MemberofRole *[]string `json:"memberof_role,omitempty"`
 
 	/*
 	Member of netgroups
 
 	*/
-	MemberofNetgroup *string `json:"memberof_netgroup,omitempty"`
+	MemberofNetgroup *[]string `json:"memberof_netgroup,omitempty"`
 
 	/*
 	Member of Sudo rule
 
 	*/
-	MemberofSudorule *string `json:"memberof_sudorule,omitempty"`
+	MemberofSudorule *[]string `json:"memberof_sudorule,omitempty"`
 
 	/*
 	Member of HBAC rule
 
 	*/
-	MemberofHbacrule *string `json:"memberof_hbacrule,omitempty"`
+	MemberofHbacrule *[]string `json:"memberof_hbacrule,omitempty"`
 
 	/*
 	Indirect Member of netgroup
@@ -81318,15 +81273,10 @@ func (out *Host) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofHostgroup = &plainV
+			out.MemberofHostgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofHostgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofHostgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofHostgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofHostgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -81355,15 +81305,10 @@ func (out *Host) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofRole = &plainV
+			out.MemberofRole = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofRole = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofRole: %v; expected at most one element", raw)
-			}
-
+			out.MemberofRole = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofRole: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -81392,15 +81337,10 @@ func (out *Host) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofNetgroup = &plainV
+			out.MemberofNetgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofNetgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofNetgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofNetgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -81429,15 +81369,10 @@ func (out *Host) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofSudorule = &plainV
+			out.MemberofSudorule = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofSudorule = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofSudorule: %v; expected at most one element", raw)
-			}
-
+			out.MemberofSudorule = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofSudorule: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -81466,15 +81401,10 @@ func (out *Host) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofHbacrule = &plainV
+			out.MemberofHbacrule = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofHbacrule = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofHbacrule: %v; expected at most one element", raw)
-			}
-
+			out.MemberofHbacrule = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofHbacrule: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -82083,37 +82013,37 @@ type Hostgroup struct {
 	Member hosts
 
 	*/
-	MemberHost *string `json:"member_host,omitempty"`
+	MemberHost *[]string `json:"member_host,omitempty"`
 
 	/*
 	Member host-groups
 
 	*/
-	MemberHostgroup *string `json:"member_hostgroup,omitempty"`
+	MemberHostgroup *[]string `json:"member_hostgroup,omitempty"`
 
 	/*
 	Member of host-groups
 
 	*/
-	MemberofHostgroup *string `json:"memberof_hostgroup,omitempty"`
+	MemberofHostgroup *[]string `json:"memberof_hostgroup,omitempty"`
 
 	/*
 	Member of netgroups
 
 	*/
-	MemberofNetgroup *string `json:"memberof_netgroup,omitempty"`
+	MemberofNetgroup *[]string `json:"memberof_netgroup,omitempty"`
 
 	/*
 	Member of Sudo rule
 
 	*/
-	MemberofSudorule *string `json:"memberof_sudorule,omitempty"`
+	MemberofSudorule *[]string `json:"memberof_sudorule,omitempty"`
 
 	/*
 	Member of HBAC rule
 
 	*/
-	MemberofHbacrule *string `json:"memberof_hbacrule,omitempty"`
+	MemberofHbacrule *[]string `json:"memberof_hbacrule,omitempty"`
 
 	/*
 	Indirect Member hosts
@@ -82286,15 +82216,10 @@ func (out *Hostgroup) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberHost = &plainV
+			out.MemberHost = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberHost = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberHost: %v; expected at most one element", raw)
-			}
-
+			out.MemberHost = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberHost: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -82323,15 +82248,10 @@ func (out *Hostgroup) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberHostgroup = &plainV
+			out.MemberHostgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberHostgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberHostgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberHostgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberHostgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -82360,15 +82280,10 @@ func (out *Hostgroup) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofHostgroup = &plainV
+			out.MemberofHostgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofHostgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofHostgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofHostgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofHostgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -82397,15 +82312,10 @@ func (out *Hostgroup) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofNetgroup = &plainV
+			out.MemberofNetgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofNetgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofNetgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofNetgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -82434,15 +82344,10 @@ func (out *Hostgroup) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofSudorule = &plainV
+			out.MemberofSudorule = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofSudorule = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofSudorule: %v; expected at most one element", raw)
-			}
-
+			out.MemberofSudorule = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofSudorule: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -82471,15 +82376,10 @@ func (out *Hostgroup) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofHbacrule = &plainV
+			out.MemberofHbacrule = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofHbacrule = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofHbacrule: %v; expected at most one element", raw)
-			}
-
+			out.MemberofHbacrule = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofHbacrule: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -84812,13 +84712,13 @@ type Netgroup struct {
 	Member netgroups
 
 	*/
-	MemberNetgroup *string `json:"member_netgroup,omitempty"`
+	MemberNetgroup *[]string `json:"member_netgroup,omitempty"`
 
 	/*
 	Member of netgroups
 
 	*/
-	MemberofNetgroup *string `json:"memberof_netgroup,omitempty"`
+	MemberofNetgroup *[]string `json:"memberof_netgroup,omitempty"`
 
 	/*
 	Indirect Member netgroups
@@ -85173,15 +85073,10 @@ func (out *Netgroup) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberNetgroup = &plainV
+			out.MemberNetgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberNetgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberNetgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberNetgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -85210,15 +85105,10 @@ func (out *Netgroup) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofNetgroup = &plainV
+			out.MemberofNetgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofNetgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofNetgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofNetgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -87750,7 +87640,7 @@ type Permission struct {
 	Granted to Privilege
 
 	*/
-	MemberPrivilege *string `json:"member_privilege,omitempty"`
+	MemberPrivilege *[]string `json:"member_privilege,omitempty"`
 
 	/*
 	Indirect Member of roles
@@ -88564,15 +88454,10 @@ func (out *Permission) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberPrivilege = &plainV
+			out.MemberPrivilege = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberPrivilege = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberPrivilege: %v; expected at most one element", raw)
-			}
-
+			out.MemberPrivilege = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberPrivilege: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -88661,13 +88546,13 @@ type Privilege struct {
 	Permissions
 
 	*/
-	MemberofPermission *string `json:"memberof_permission,omitempty"`
+	MemberofPermission *[]string `json:"memberof_permission,omitempty"`
 
 	/*
 	Granting privilege to roles
 
 	*/
-	MemberRole *string `json:"member_role,omitempty"`
+	MemberRole *[]string `json:"member_role,omitempty"`
 }
 
 func (t *Privilege) String() string {
@@ -88792,15 +88677,10 @@ func (out *Privilege) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofPermission = &plainV
+			out.MemberofPermission = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofPermission = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofPermission: %v; expected at most one element", raw)
-			}
-
+			out.MemberofPermission = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofPermission: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -88829,15 +88709,10 @@ func (out *Privilege) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberRole = &plainV
+			out.MemberRole = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberRole = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberRole: %v; expected at most one element", raw)
-			}
-
+			out.MemberRole = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberRole: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -89875,37 +89750,37 @@ type Role struct {
 	Member users
 
 	*/
-	MemberUser *string `json:"member_user,omitempty"`
+	MemberUser *[]string `json:"member_user,omitempty"`
 
 	/*
 	Member groups
 
 	*/
-	MemberGroup *string `json:"member_group,omitempty"`
+	MemberGroup *[]string `json:"member_group,omitempty"`
 
 	/*
 	Member hosts
 
 	*/
-	MemberHost *string `json:"member_host,omitempty"`
+	MemberHost *[]string `json:"member_host,omitempty"`
 
 	/*
 	Member host-groups
 
 	*/
-	MemberHostgroup *string `json:"member_hostgroup,omitempty"`
+	MemberHostgroup *[]string `json:"member_hostgroup,omitempty"`
 
 	/*
 	Privileges
 
 	*/
-	MemberofPrivilege *string `json:"memberof_privilege,omitempty"`
+	MemberofPrivilege *[]string `json:"memberof_privilege,omitempty"`
 
 	/*
 	Member services
 
 	*/
-	MemberService *string `json:"member_service,omitempty"`
+	MemberService *[]string `json:"member_service,omitempty"`
 }
 
 func (t *Role) String() string {
@@ -90038,15 +89913,10 @@ func (out *Role) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberUser = &plainV
+			out.MemberUser = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberUser = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberUser: %v; expected at most one element", raw)
-			}
-
+			out.MemberUser = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberUser: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -90075,15 +89945,10 @@ func (out *Role) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberGroup = &plainV
+			out.MemberGroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberGroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberGroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberGroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberGroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -90112,15 +89977,10 @@ func (out *Role) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberHost = &plainV
+			out.MemberHost = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberHost = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberHost: %v; expected at most one element", raw)
-			}
-
+			out.MemberHost = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberHost: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -90149,15 +90009,10 @@ func (out *Role) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberHostgroup = &plainV
+			out.MemberHostgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberHostgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberHostgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberHostgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberHostgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -90186,15 +90041,10 @@ func (out *Role) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofPrivilege = &plainV
+			out.MemberofPrivilege = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofPrivilege = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofPrivilege: %v; expected at most one element", raw)
-			}
-
+			out.MemberofPrivilege = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofPrivilege: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -90223,15 +90073,10 @@ func (out *Role) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberService = &plainV
+			out.MemberService = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberService = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberService: %v; expected at most one element", raw)
-			}
-
+			out.MemberService = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberService: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -91640,7 +91485,7 @@ type Service struct {
 	Roles
 
 	*/
-	MemberofRole *string `json:"memberof_role,omitempty"`
+	MemberofRole *[]string `json:"memberof_role,omitempty"`
 
 	/*
 	Keytab
@@ -92400,15 +92245,10 @@ func (out *Service) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofRole = &plainV
+			out.MemberofRole = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofRole = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofRole: %v; expected at most one element", raw)
-			}
-
+			out.MemberofRole = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofRole: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -93504,31 +93344,31 @@ type Stageuser struct {
 	Member of groups
 
 	*/
-	MemberofGroup *string `json:"memberof_group,omitempty"`
+	MemberofGroup *[]string `json:"memberof_group,omitempty"`
 
 	/*
 	Roles
 
 	*/
-	MemberofRole *string `json:"memberof_role,omitempty"`
+	MemberofRole *[]string `json:"memberof_role,omitempty"`
 
 	/*
 	Member of netgroups
 
 	*/
-	MemberofNetgroup *string `json:"memberof_netgroup,omitempty"`
+	MemberofNetgroup *[]string `json:"memberof_netgroup,omitempty"`
 
 	/*
 	Member of Sudo rule
 
 	*/
-	MemberofSudorule *string `json:"memberof_sudorule,omitempty"`
+	MemberofSudorule *[]string `json:"memberof_sudorule,omitempty"`
 
 	/*
 	Member of HBAC rule
 
 	*/
-	MemberofHbacrule *string `json:"memberof_hbacrule,omitempty"`
+	MemberofHbacrule *[]string `json:"memberof_hbacrule,omitempty"`
 
 	/*
 	Indirect Member of group
@@ -95207,15 +95047,10 @@ func (out *Stageuser) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofGroup = &plainV
+			out.MemberofGroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofGroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofGroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofGroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofGroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -95244,15 +95079,10 @@ func (out *Stageuser) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofRole = &plainV
+			out.MemberofRole = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofRole = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofRole: %v; expected at most one element", raw)
-			}
-
+			out.MemberofRole = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofRole: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -95281,15 +95111,10 @@ func (out *Stageuser) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofNetgroup = &plainV
+			out.MemberofNetgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofNetgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofNetgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofNetgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -95318,15 +95143,10 @@ func (out *Stageuser) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofSudorule = &plainV
+			out.MemberofSudorule = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofSudorule = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofSudorule: %v; expected at most one element", raw)
-			}
-
+			out.MemberofSudorule = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofSudorule: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -95355,15 +95175,10 @@ func (out *Stageuser) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofHbacrule = &plainV
+			out.MemberofHbacrule = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofHbacrule = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofHbacrule: %v; expected at most one element", raw)
-			}
-
+			out.MemberofHbacrule = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofHbacrule: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -95612,7 +95427,7 @@ type Sudocmd struct {
 	Sudo Command Groups
 
 	*/
-	MemberofSudocmdgroup *string `json:"memberof_sudocmdgroup,omitempty"`
+	MemberofSudocmdgroup *[]string `json:"memberof_sudocmdgroup,omitempty"`
 }
 
 func (t *Sudocmd) String() string {
@@ -95735,15 +95550,10 @@ func (out *Sudocmd) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofSudocmdgroup = &plainV
+			out.MemberofSudocmdgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofSudocmdgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofSudocmdgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofSudocmdgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofSudocmdgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -95782,7 +95592,7 @@ type Sudocmdgroup struct {
 	Member Sudo commands
 
 	*/
-	MemberSudocmd *string `json:"member_sudocmd,omitempty"`
+	MemberSudocmd *[]string `json:"member_sudocmd,omitempty"`
 }
 
 func (t *Sudocmdgroup) String() string {
@@ -95983,15 +95793,10 @@ func (out *Sudocmdgroup) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberSudocmd = &plainV
+			out.MemberSudocmd = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberSudocmd = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberSudocmd: %v; expected at most one element", raw)
-			}
-
+			out.MemberSudocmd = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberSudocmd: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -99308,31 +99113,31 @@ type User struct {
 	Member of groups
 
 	*/
-	MemberofGroup *string `json:"memberof_group,omitempty"`
+	MemberofGroup *[]string `json:"memberof_group,omitempty"`
 
 	/*
 	Roles
 
 	*/
-	MemberofRole *string `json:"memberof_role,omitempty"`
+	MemberofRole *[]string `json:"memberof_role,omitempty"`
 
 	/*
 	Member of netgroups
 
 	*/
-	MemberofNetgroup *string `json:"memberof_netgroup,omitempty"`
+	MemberofNetgroup *[]string `json:"memberof_netgroup,omitempty"`
 
 	/*
 	Member of Sudo rule
 
 	*/
-	MemberofSudorule *string `json:"memberof_sudorule,omitempty"`
+	MemberofSudorule *[]string `json:"memberof_sudorule,omitempty"`
 
 	/*
 	Member of HBAC rule
 
 	*/
-	MemberofHbacrule *string `json:"memberof_hbacrule,omitempty"`
+	MemberofHbacrule *[]string `json:"memberof_hbacrule,omitempty"`
 
 	/*
 	Indirect Member of group
@@ -101091,15 +100896,10 @@ func (out *User) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofGroup = &plainV
+			out.MemberofGroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofGroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofGroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofGroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofGroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -101128,15 +100928,10 @@ func (out *User) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofRole = &plainV
+			out.MemberofRole = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofRole = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofRole: %v; expected at most one element", raw)
-			}
-
+			out.MemberofRole = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofRole: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -101165,15 +100960,10 @@ func (out *User) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofNetgroup = &plainV
+			out.MemberofNetgroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofNetgroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofNetgroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberofNetgroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -101202,15 +100992,10 @@ func (out *User) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofSudorule = &plainV
+			out.MemberofSudorule = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofSudorule = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofSudorule: %v; expected at most one element", raw)
-			}
-
+			out.MemberofSudorule = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofSudorule: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -101239,15 +101024,10 @@ func (out *User) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberofHbacrule = &plainV
+			out.MemberofHbacrule = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberofHbacrule = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofHbacrule: %v; expected at most one element", raw)
-			}
-
+			out.MemberofHbacrule = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberofHbacrule: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -101845,19 +101625,19 @@ type Vault struct {
 	Member users
 
 	*/
-	MemberUser *string `json:"member_user,omitempty"`
+	MemberUser *[]string `json:"member_user,omitempty"`
 
 	/*
 	Member groups
 
 	*/
-	MemberGroup *string `json:"member_group,omitempty"`
+	MemberGroup *[]string `json:"member_group,omitempty"`
 
 	/*
 	Member services
 
 	*/
-	MemberService *string `json:"member_service,omitempty"`
+	MemberService *[]string `json:"member_service,omitempty"`
 }
 
 func (t *Vault) String() string {
@@ -102374,15 +102154,10 @@ func (out *Vault) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberUser = &plainV
+			out.MemberUser = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberUser = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberUser: %v; expected at most one element", raw)
-			}
-
+			out.MemberUser = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberUser: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -102411,15 +102186,10 @@ func (out *Vault) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberGroup = &plainV
+			out.MemberGroup = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberGroup = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberGroup: %v; expected at most one element", raw)
-			}
-
+			out.MemberGroup = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberGroup: %v (%v)", raw, reflect.TypeOf(raw))
 		}
@@ -102448,15 +102218,10 @@ func (out *Vault) UnmarshalJSON(data []byte) error {
 		}
 
 		if plainOk {
-			out.MemberService = &plainV
+			out.MemberService = &[]string{plainV}
 		} else if sliceOk {
 
-			if len(sliceV) == 1 {
-				out.MemberService = &sliceV[0]
-			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberService: %v; expected at most one element", raw)
-			}
-
+			out.MemberService = &sliceV
 		} else {
 			return fmt.Errorf("unexpected value for field MemberService: %v (%v)", raw, reflect.TypeOf(raw))
 		}
