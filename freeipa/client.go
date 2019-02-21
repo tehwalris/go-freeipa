@@ -109,7 +109,17 @@ func (c *Client) login() error {
 	if e != nil {
 		return e
 	}
+
 	if res.StatusCode != http.StatusOK {
+		if res.StatusCode == http.StatusUnauthorized {
+			if rejectionReason := res.Header.Get("X-Ipa-Rejection-Reason"); rejectionReason == "password-expired" {
+				return &Error{
+					Message: rejectionReason,
+					Name:    rejectionReason,
+					Code:    PasswordExpiredCode,
+				}
+			}
+		}
 		return fmt.Errorf("unexpected http status code: %v", res.StatusCode)
 	}
 	return nil
