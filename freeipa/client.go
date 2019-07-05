@@ -85,6 +85,7 @@ func (c *Client) exec(req *request) (io.ReadCloser, error) {
 	}
 
 	if res.StatusCode == http.StatusUnauthorized {
+		res.Body.Close()
 		if e := c.login(); e != nil {
 			return nil, fmt.Errorf("renewed login failed: %v", e)
 		}
@@ -95,6 +96,7 @@ func (c *Client) exec(req *request) (io.ReadCloser, error) {
 	}
 
 	if res.StatusCode != http.StatusOK {
+		res.Body.Close()
 		return nil, fmt.Errorf("unexpected http status code: %v", res.StatusCode)
 	}
 	return res.Body, nil
