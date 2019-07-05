@@ -41,6 +41,7 @@ func (c *Client) AciAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res aciAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -222,6 +223,7 @@ func (c *Client) AciDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res aciDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -342,6 +344,7 @@ func (c *Client) AciFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res aciFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -529,6 +532,7 @@ func (c *Client) AciMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res aciModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -704,6 +708,7 @@ func (c *Client) AciRename(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res aciRenameResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -885,6 +890,7 @@ func (c *Client) AciShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res aciShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -995,7 +1001,7 @@ func (c *Client) AdtrustIsEnabled(
 	kwp := adtrustIsEnabledKwParams{
 		AdtrustIsEnabledArgs:         reqArgs,
 		AdtrustIsEnabledOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "adtrust_is_enabled",
@@ -1006,6 +1012,7 @@ func (c *Client) AdtrustIsEnabled(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res adtrustIsEnabledResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -1085,6 +1092,7 @@ func (c *Client) AutomemberAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -1209,7 +1217,7 @@ func (c *Client) AutomemberAddCondition(
 	kwp := automemberAddConditionKwParams{
 		AutomemberAddConditionArgs:         reqArgs,
 		AutomemberAddConditionOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                            apiVersion,
 	}
 	req := request{
 		Method: "automember_add_condition",
@@ -1220,6 +1228,7 @@ func (c *Client) AutomemberAddCondition(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberAddConditionResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -1360,7 +1369,7 @@ func (c *Client) AutomemberDefaultGroupRemove(
 	kwp := automemberDefaultGroupRemoveKwParams{
 		AutomemberDefaultGroupRemoveArgs:         reqArgs,
 		AutomemberDefaultGroupRemoveOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                  apiVersion,
 	}
 	req := request{
 		Method: "automember_default_group_remove",
@@ -1371,6 +1380,7 @@ func (c *Client) AutomemberDefaultGroupRemove(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberDefaultGroupRemoveResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -1475,7 +1485,7 @@ func (c *Client) AutomemberDefaultGroupSet(
 	kwp := automemberDefaultGroupSetKwParams{
 		AutomemberDefaultGroupSetArgs:         reqArgs,
 		AutomemberDefaultGroupSetOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                               apiVersion,
 	}
 	req := request{
 		Method: "automember_default_group_set",
@@ -1486,6 +1496,7 @@ func (c *Client) AutomemberDefaultGroupSet(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberDefaultGroupSetResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -1596,7 +1607,7 @@ func (c *Client) AutomemberDefaultGroupShow(
 	kwp := automemberDefaultGroupShowKwParams{
 		AutomemberDefaultGroupShowArgs:         reqArgs,
 		AutomemberDefaultGroupShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                apiVersion,
 	}
 	req := request{
 		Method: "automember_default_group_show",
@@ -1607,6 +1618,7 @@ func (c *Client) AutomemberDefaultGroupShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberDefaultGroupShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -1716,6 +1728,7 @@ func (c *Client) AutomemberDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -1820,6 +1833,7 @@ func (c *Client) AutomemberFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -1947,6 +1961,7 @@ func (c *Client) AutomemberMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -2084,7 +2099,7 @@ func (c *Client) AutomemberRebuild(
 	kwp := automemberRebuildKwParams{
 		AutomemberRebuildArgs:         reqArgs,
 		AutomemberRebuildOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "automember_rebuild",
@@ -2095,6 +2110,7 @@ func (c *Client) AutomemberRebuild(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberRebuildResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -2211,7 +2227,7 @@ func (c *Client) AutomemberRemoveCondition(
 	kwp := automemberRemoveConditionKwParams{
 		AutomemberRemoveConditionArgs:         reqArgs,
 		AutomemberRemoveConditionOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                               apiVersion,
 	}
 	req := request{
 		Method: "automember_remove_condition",
@@ -2222,6 +2238,7 @@ func (c *Client) AutomemberRemoveCondition(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberRemoveConditionResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -2373,6 +2390,7 @@ func (c *Client) AutomemberShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automemberShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -2488,6 +2506,7 @@ func (c *Client) AutomountkeyAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountkeyAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -2629,6 +2648,7 @@ func (c *Client) AutomountkeyDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountkeyDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -2740,7 +2760,7 @@ func (c *Client) AutomountkeyFind(
 	kwp := automountkeyFindKwParams{
 		AutomountkeyFindArgs:         reqArgs,
 		AutomountkeyFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "automountkey_find",
@@ -2751,6 +2771,7 @@ func (c *Client) AutomountkeyFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountkeyFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -2896,6 +2917,7 @@ func (c *Client) AutomountkeyMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountkeyModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -3051,7 +3073,7 @@ func (c *Client) AutomountkeyShow(
 	kwp := automountkeyShowKwParams{
 		AutomountkeyShowArgs:         reqArgs,
 		AutomountkeyShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "automountkey_show",
@@ -3062,6 +3084,7 @@ func (c *Client) AutomountkeyShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountkeyShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -3184,7 +3207,7 @@ func (c *Client) AutomountlocationAdd(
 	kwp := automountlocationAddKwParams{
 		AutomountlocationAddArgs:         reqArgs,
 		AutomountlocationAddOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "automountlocation_add",
@@ -3195,6 +3218,7 @@ func (c *Client) AutomountlocationAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountlocationAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -3307,7 +3331,7 @@ func (c *Client) AutomountlocationDel(
 	kwp := automountlocationDelKwParams{
 		AutomountlocationDelArgs:         reqArgs,
 		AutomountlocationDelOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "automountlocation_del",
@@ -3318,6 +3342,7 @@ func (c *Client) AutomountlocationDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountlocationDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -3411,7 +3436,7 @@ func (c *Client) AutomountlocationFind(
 	kwp := automountlocationFindKwParams{
 		AutomountlocationFindArgs:         reqArgs,
 		AutomountlocationFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "automountlocation_find",
@@ -3422,6 +3447,7 @@ func (c *Client) AutomountlocationFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountlocationFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -3544,7 +3570,7 @@ func (c *Client) AutomountlocationShow(
 	kwp := automountlocationShowKwParams{
 		AutomountlocationShowArgs:         reqArgs,
 		AutomountlocationShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "automountlocation_show",
@@ -3555,6 +3581,7 @@ func (c *Client) AutomountlocationShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountlocationShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -3659,7 +3686,7 @@ func (c *Client) AutomountlocationTofiles(
 	kwp := automountlocationTofilesKwParams{
 		AutomountlocationTofilesArgs:         reqArgs,
 		AutomountlocationTofilesOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "automountlocation_tofiles",
@@ -3670,6 +3697,7 @@ func (c *Client) AutomountlocationTofiles(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountlocationTofilesResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -3755,6 +3783,7 @@ func (c *Client) AutomountmapAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountmapAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -3879,7 +3908,7 @@ func (c *Client) AutomountmapAddIndirect(
 	kwp := automountmapAddIndirectKwParams{
 		AutomountmapAddIndirectArgs:         reqArgs,
 		AutomountmapAddIndirectOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                             apiVersion,
 	}
 	req := request{
 		Method: "automountmap_add_indirect",
@@ -3890,6 +3919,7 @@ func (c *Client) AutomountmapAddIndirect(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountmapAddIndirectResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -4037,6 +4067,7 @@ func (c *Client) AutomountmapDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountmapDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -4136,7 +4167,7 @@ func (c *Client) AutomountmapFind(
 	kwp := automountmapFindKwParams{
 		AutomountmapFindArgs:         reqArgs,
 		AutomountmapFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "automountmap_find",
@@ -4147,6 +4178,7 @@ func (c *Client) AutomountmapFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountmapFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -4292,6 +4324,7 @@ func (c *Client) AutomountmapMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountmapModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -4429,7 +4462,7 @@ func (c *Client) AutomountmapShow(
 	kwp := automountmapShowKwParams{
 		AutomountmapShowArgs:         reqArgs,
 		AutomountmapShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "automountmap_show",
@@ -4440,6 +4473,7 @@ func (c *Client) AutomountmapShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res automountmapShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -4561,6 +4595,7 @@ func (c *Client) CaAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -4696,6 +4731,7 @@ func (c *Client) CaDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -4799,6 +4835,7 @@ func (c *Client) CaDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -4896,6 +4933,7 @@ func (c *Client) CaEnable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caEnableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -4994,6 +5032,7 @@ func (c *Client) CaFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -5151,6 +5190,7 @@ func (c *Client) CaIsEnabled(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caIsEnabledResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -5242,6 +5282,7 @@ func (c *Client) CaMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -5390,6 +5431,7 @@ func (c *Client) CaShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -5505,6 +5547,7 @@ func (c *Client) CaaclAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -5676,6 +5719,7 @@ func (c *Client) CaaclAddCa(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclAddCaResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -5797,6 +5841,7 @@ func (c *Client) CaaclAddHost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclAddHostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -5924,6 +5969,7 @@ func (c *Client) CaaclAddProfile(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclAddProfileResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -6045,6 +6091,7 @@ func (c *Client) CaaclAddService(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclAddServiceResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -6166,6 +6213,7 @@ func (c *Client) CaaclAddUser(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclAddUserResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -6293,6 +6341,7 @@ func (c *Client) CaaclDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -6396,6 +6445,7 @@ func (c *Client) CaaclDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -6493,6 +6543,7 @@ func (c *Client) CaaclEnable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclEnableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -6591,6 +6642,7 @@ func (c *Client) CaaclFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -6772,6 +6824,7 @@ func (c *Client) CaaclMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -6956,6 +7009,7 @@ func (c *Client) CaaclRemoveCa(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclRemoveCaResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -7077,6 +7131,7 @@ func (c *Client) CaaclRemoveHost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclRemoveHostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -7193,7 +7248,7 @@ func (c *Client) CaaclRemoveProfile(
 	kwp := caaclRemoveProfileKwParams{
 		CaaclRemoveProfileArgs:         reqArgs,
 		CaaclRemoveProfileOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "caacl_remove_profile",
@@ -7204,6 +7259,7 @@ func (c *Client) CaaclRemoveProfile(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclRemoveProfileResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -7314,7 +7370,7 @@ func (c *Client) CaaclRemoveService(
 	kwp := caaclRemoveServiceKwParams{
 		CaaclRemoveServiceArgs:         reqArgs,
 		CaaclRemoveServiceOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "caacl_remove_service",
@@ -7325,6 +7381,7 @@ func (c *Client) CaaclRemoveService(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclRemoveServiceResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -7446,6 +7503,7 @@ func (c *Client) CaaclRemoveUser(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclRemoveUserResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -7573,6 +7631,7 @@ func (c *Client) CaaclShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res caaclShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -7695,6 +7754,7 @@ func (c *Client) CertFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -7960,6 +8020,7 @@ func (c *Client) CertRemoveHold(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certRemoveHoldResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -8051,6 +8112,7 @@ func (c *Client) CertRequest(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certRequestResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -8190,6 +8252,7 @@ func (c *Client) CertRevoke(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certRevokeResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -8287,6 +8350,7 @@ func (c *Client) CertShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -8414,6 +8478,7 @@ func (c *Client) CertStatus(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certStatusResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -8529,6 +8594,7 @@ func (c *Client) CertprofileDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certprofileDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -8633,6 +8699,7 @@ func (c *Client) CertprofileFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certprofileFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -8767,7 +8834,7 @@ func (c *Client) CertprofileImport(
 	kwp := certprofileImportKwParams{
 		CertprofileImportArgs:         reqArgs,
 		CertprofileImportOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "certprofile_import",
@@ -8778,6 +8845,7 @@ func (c *Client) CertprofileImport(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certprofileImportResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -8905,6 +8973,7 @@ func (c *Client) CertprofileMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certprofileModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -9059,6 +9128,7 @@ func (c *Client) CertprofileShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res certprofileShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -9181,6 +9251,7 @@ func (c *Client) ClassFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res classFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -9296,6 +9367,7 @@ func (c *Client) ClassShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res classShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -9406,6 +9478,7 @@ func (c *Client) CommandFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res commandFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -9521,6 +9594,7 @@ func (c *Client) CommandShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res commandShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -9630,6 +9704,7 @@ func (c *Client) CompatIsEnabled(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res compatIsEnabledResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -9709,6 +9784,7 @@ func (c *Client) ConfigMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res configModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -9953,6 +10029,7 @@ func (c *Client) ConfigShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res configShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -10062,6 +10139,7 @@ func (c *Client) CosentryAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res cosentryAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -10197,6 +10275,7 @@ func (c *Client) CosentryDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res cosentryDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -10301,6 +10380,7 @@ func (c *Client) CosentryFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res cosentryFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -10446,6 +10526,7 @@ func (c *Client) CosentryMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res cosentryModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -10594,6 +10675,7 @@ func (c *Client) CosentryShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res cosentryShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -10709,6 +10791,7 @@ func (c *Client) DelegationAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res delegationAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -10842,6 +10925,7 @@ func (c *Client) DelegationDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res delegationDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -10940,6 +11024,7 @@ func (c *Client) DelegationFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res delegationFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -11085,6 +11170,7 @@ func (c *Client) DelegationMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res delegationModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -11218,6 +11304,7 @@ func (c *Client) DelegationShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res delegationShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -11327,6 +11414,7 @@ func (c *Client) DNSIsEnabled(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsIsEnabledResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -11418,6 +11506,7 @@ func (c *Client) DNSResolve(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsResolveResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -11504,7 +11593,7 @@ func (c *Client) DNSUpdateSystemRecords(
 	kwp := dnsUpdateSystemRecordsKwParams{
 		DNSUpdateSystemRecordsArgs:         reqArgs,
 		DNSUpdateSystemRecordsOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                            apiVersion,
 	}
 	req := request{
 		Method: "dns_update_system_records",
@@ -11515,6 +11604,7 @@ func (c *Client) DNSUpdateSystemRecords(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsUpdateSystemRecordsResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -11618,6 +11708,7 @@ func (c *Client) DnsconfigMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsconfigModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -11772,6 +11863,7 @@ func (c *Client) DnsconfigShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsconfigShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -11870,7 +11962,7 @@ func (c *Client) DnsforwardzoneAdd(
 	kwp := dnsforwardzoneAddKwParams{
 		DnsforwardzoneAddArgs:         reqArgs,
 		DnsforwardzoneAddOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "dnsforwardzone_add",
@@ -11881,6 +11973,7 @@ func (c *Client) DnsforwardzoneAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsforwardzoneAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -12017,7 +12110,7 @@ func (c *Client) DnsforwardzoneAddPermission(
 	kwp := dnsforwardzoneAddPermissionKwParams{
 		DnsforwardzoneAddPermissionArgs:         reqArgs,
 		DnsforwardzoneAddPermissionOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                 apiVersion,
 	}
 	req := request{
 		Method: "dnsforwardzone_add_permission",
@@ -12028,6 +12121,7 @@ func (c *Client) DnsforwardzoneAddPermission(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsforwardzoneAddPermissionResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -12114,7 +12208,7 @@ func (c *Client) DnsforwardzoneDel(
 	kwp := dnsforwardzoneDelKwParams{
 		DnsforwardzoneDelArgs:         reqArgs,
 		DnsforwardzoneDelOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "dnsforwardzone_del",
@@ -12125,6 +12219,7 @@ func (c *Client) DnsforwardzoneDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsforwardzoneDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -12217,7 +12312,7 @@ func (c *Client) DnsforwardzoneDisable(
 	kwp := dnsforwardzoneDisableKwParams{
 		DnsforwardzoneDisableArgs:         reqArgs,
 		DnsforwardzoneDisableOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "dnsforwardzone_disable",
@@ -12228,6 +12323,7 @@ func (c *Client) DnsforwardzoneDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsforwardzoneDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -12314,7 +12410,7 @@ func (c *Client) DnsforwardzoneEnable(
 	kwp := dnsforwardzoneEnableKwParams{
 		DnsforwardzoneEnableArgs:         reqArgs,
 		DnsforwardzoneEnableOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "dnsforwardzone_enable",
@@ -12325,6 +12421,7 @@ func (c *Client) DnsforwardzoneEnable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsforwardzoneEnableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -12412,7 +12509,7 @@ func (c *Client) DnsforwardzoneFind(
 	kwp := dnsforwardzoneFindKwParams{
 		DnsforwardzoneFindArgs:         reqArgs,
 		DnsforwardzoneFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "dnsforwardzone_find",
@@ -12423,6 +12520,7 @@ func (c *Client) DnsforwardzoneFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsforwardzoneFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -12569,7 +12667,7 @@ func (c *Client) DnsforwardzoneMod(
 	kwp := dnsforwardzoneModKwParams{
 		DnsforwardzoneModArgs:         reqArgs,
 		DnsforwardzoneModOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "dnsforwardzone_mod",
@@ -12580,6 +12678,7 @@ func (c *Client) DnsforwardzoneMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsforwardzoneModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -12734,6 +12833,7 @@ func (c *Client) DnsforwardzoneRemovePermission(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsforwardzoneRemovePermissionResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -12820,7 +12920,7 @@ func (c *Client) DnsforwardzoneShow(
 	kwp := dnsforwardzoneShowKwParams{
 		DnsforwardzoneShowArgs:         reqArgs,
 		DnsforwardzoneShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "dnsforwardzone_show",
@@ -12831,6 +12931,7 @@ func (c *Client) DnsforwardzoneShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsforwardzoneShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -12946,6 +13047,7 @@ func (c *Client) DnsrecordAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsrecordAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -13615,6 +13717,7 @@ func (c *Client) DnsrecordDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsrecordDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -13911,7 +14014,7 @@ func (c *Client) DnsrecordDelentry(
 	kwp := dnsrecordDelentryKwParams{
 		DnsrecordDelentryArgs:         reqArgs,
 		DnsrecordDelentryOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "dnsrecord_delentry",
@@ -13922,6 +14025,7 @@ func (c *Client) DnsrecordDelentry(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsrecordDelentryResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -14032,6 +14136,7 @@ func (c *Client) DnsrecordFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsrecordFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -14363,6 +14468,7 @@ func (c *Client) DnsrecordMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsrecordModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -15033,6 +15139,7 @@ func (c *Client) DnsrecordShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsrecordShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -15149,7 +15256,7 @@ func (c *Client) DnsrecordSplitParts(
 	kwp := dnsrecordSplitPartsKwParams{
 		DnsrecordSplitPartsArgs:         reqArgs,
 		DnsrecordSplitPartsOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "dnsrecord_split_parts",
@@ -15160,6 +15267,7 @@ func (c *Client) DnsrecordSplitParts(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsrecordSplitPartsResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -15252,6 +15360,7 @@ func (c *Client) DnsserverFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsserverFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -15403,6 +15512,7 @@ func (c *Client) DnsserverMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsserverModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -15557,6 +15667,7 @@ func (c *Client) DnsserverShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnsserverShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -15672,6 +15783,7 @@ func (c *Client) DnszoneAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnszoneAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -15928,7 +16040,7 @@ func (c *Client) DnszoneAddPermission(
 	kwp := dnszoneAddPermissionKwParams{
 		DnszoneAddPermissionArgs:         reqArgs,
 		DnszoneAddPermissionOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "dnszone_add_permission",
@@ -15939,6 +16051,7 @@ func (c *Client) DnszoneAddPermission(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnszoneAddPermissionResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -16036,6 +16149,7 @@ func (c *Client) DnszoneDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnszoneDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -16139,6 +16253,7 @@ func (c *Client) DnszoneDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnszoneDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -16236,6 +16351,7 @@ func (c *Client) DnszoneEnable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnszoneEnableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -16334,6 +16450,7 @@ func (c *Client) DnszoneFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnszoneFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -16599,6 +16716,7 @@ func (c *Client) DnszoneMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnszoneModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -16850,7 +16968,7 @@ func (c *Client) DnszoneRemovePermission(
 	kwp := dnszoneRemovePermissionKwParams{
 		DnszoneRemovePermissionArgs:         reqArgs,
 		DnszoneRemovePermissionOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                             apiVersion,
 	}
 	req := request{
 		Method: "dnszone_remove_permission",
@@ -16861,6 +16979,7 @@ func (c *Client) DnszoneRemovePermission(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnszoneRemovePermissionResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -16958,6 +17077,7 @@ func (c *Client) DnszoneShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res dnszoneShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -17073,6 +17193,7 @@ func (c *Client) DomainlevelGet(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res domainlevelGetResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -17152,6 +17273,7 @@ func (c *Client) DomainlevelSet(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res domainlevelSetResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -17237,6 +17359,7 @@ func (c *Client) GroupAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res groupAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -17390,6 +17513,7 @@ func (c *Client) GroupAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res groupAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -17523,6 +17647,7 @@ func (c *Client) GroupDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res groupDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -17626,6 +17751,7 @@ func (c *Client) GroupDetach(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res groupDetachResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -17724,6 +17850,7 @@ func (c *Client) GroupFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res groupFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -17983,6 +18110,7 @@ func (c *Client) GroupMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res groupModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -18144,7 +18272,7 @@ func (c *Client) GroupRemoveMember(
 	kwp := groupRemoveMemberKwParams{
 		GroupRemoveMemberArgs:         reqArgs,
 		GroupRemoveMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "group_remove_member",
@@ -18155,6 +18283,7 @@ func (c *Client) GroupRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res groupRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -18288,6 +18417,7 @@ func (c *Client) GroupShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res groupShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -18409,6 +18539,7 @@ func (c *Client) HbacruleAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -18586,6 +18717,7 @@ func (c *Client) HbacruleAddHost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleAddHostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -18702,7 +18834,7 @@ func (c *Client) HbacruleAddService(
 	kwp := hbacruleAddServiceKwParams{
 		HbacruleAddServiceArgs:         reqArgs,
 		HbacruleAddServiceOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "hbacrule_add_service",
@@ -18713,6 +18845,7 @@ func (c *Client) HbacruleAddService(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleAddServiceResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -18829,7 +18962,7 @@ func (c *Client) HbacruleAddSourcehost(
 	kwp := hbacruleAddSourcehostKwParams{
 		HbacruleAddSourcehostArgs:         reqArgs,
 		HbacruleAddSourcehostOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "hbacrule_add_sourcehost",
@@ -18840,6 +18973,7 @@ func (c *Client) HbacruleAddSourcehost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleAddSourcehostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -18967,6 +19101,7 @@ func (c *Client) HbacruleAddUser(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleAddUserResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -19094,6 +19229,7 @@ func (c *Client) HbacruleDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -19197,6 +19333,7 @@ func (c *Client) HbacruleDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -19294,6 +19431,7 @@ func (c *Client) HbacruleEnable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleEnableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -19392,6 +19530,7 @@ func (c *Client) HbacruleFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -19579,6 +19718,7 @@ func (c *Client) HbacruleMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -19758,7 +19898,7 @@ func (c *Client) HbacruleRemoveHost(
 	kwp := hbacruleRemoveHostKwParams{
 		HbacruleRemoveHostArgs:         reqArgs,
 		HbacruleRemoveHostOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "hbacrule_remove_host",
@@ -19769,6 +19909,7 @@ func (c *Client) HbacruleRemoveHost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleRemoveHostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -19885,7 +20026,7 @@ func (c *Client) HbacruleRemoveService(
 	kwp := hbacruleRemoveServiceKwParams{
 		HbacruleRemoveServiceArgs:         reqArgs,
 		HbacruleRemoveServiceOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "hbacrule_remove_service",
@@ -19896,6 +20037,7 @@ func (c *Client) HbacruleRemoveService(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleRemoveServiceResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -20012,7 +20154,7 @@ func (c *Client) HbacruleRemoveSourcehost(
 	kwp := hbacruleRemoveSourcehostKwParams{
 		HbacruleRemoveSourcehostArgs:         reqArgs,
 		HbacruleRemoveSourcehostOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "hbacrule_remove_sourcehost",
@@ -20023,6 +20165,7 @@ func (c *Client) HbacruleRemoveSourcehost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleRemoveSourcehostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -20139,7 +20282,7 @@ func (c *Client) HbacruleRemoveUser(
 	kwp := hbacruleRemoveUserKwParams{
 		HbacruleRemoveUserArgs:         reqArgs,
 		HbacruleRemoveUserOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "hbacrule_remove_user",
@@ -20150,6 +20293,7 @@ func (c *Client) HbacruleRemoveUser(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleRemoveUserResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -20277,6 +20421,7 @@ func (c *Client) HbacruleShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacruleShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -20398,6 +20543,7 @@ func (c *Client) HbacsvcAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -20533,6 +20679,7 @@ func (c *Client) HbacsvcDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -20637,6 +20784,7 @@ func (c *Client) HbacsvcFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -20782,6 +20930,7 @@ func (c *Client) HbacsvcMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -20930,6 +21079,7 @@ func (c *Client) HbacsvcShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -21051,6 +21201,7 @@ func (c *Client) HbacsvcgroupAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcgroupAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -21175,7 +21326,7 @@ func (c *Client) HbacsvcgroupAddMember(
 	kwp := hbacsvcgroupAddMemberKwParams{
 		HbacsvcgroupAddMemberArgs:         reqArgs,
 		HbacsvcgroupAddMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "hbacsvcgroup_add_member",
@@ -21186,6 +21337,7 @@ func (c *Client) HbacsvcgroupAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcgroupAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -21307,6 +21459,7 @@ func (c *Client) HbacsvcgroupDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcgroupDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -21400,7 +21553,7 @@ func (c *Client) HbacsvcgroupFind(
 	kwp := hbacsvcgroupFindKwParams{
 		HbacsvcgroupFindArgs:         reqArgs,
 		HbacsvcgroupFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "hbacsvcgroup_find",
@@ -21411,6 +21564,7 @@ func (c *Client) HbacsvcgroupFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcgroupFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -21556,6 +21710,7 @@ func (c *Client) HbacsvcgroupMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcgroupModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -21693,7 +21848,7 @@ func (c *Client) HbacsvcgroupRemoveMember(
 	kwp := hbacsvcgroupRemoveMemberKwParams{
 		HbacsvcgroupRemoveMemberArgs:         reqArgs,
 		HbacsvcgroupRemoveMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "hbacsvcgroup_remove_member",
@@ -21704,6 +21859,7 @@ func (c *Client) HbacsvcgroupRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcgroupRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -21814,7 +21970,7 @@ func (c *Client) HbacsvcgroupShow(
 	kwp := hbacsvcgroupShowKwParams{
 		HbacsvcgroupShowArgs:         reqArgs,
 		HbacsvcgroupShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "hbacsvcgroup_show",
@@ -21825,6 +21981,7 @@ func (c *Client) HbacsvcgroupShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbacsvcgroupShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -21946,6 +22103,7 @@ func (c *Client) Hbactest(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hbactestResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -22109,6 +22267,7 @@ func (c *Client) HostAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -22352,6 +22511,7 @@ func (c *Client) HostAddCert(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostAddCertResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -22462,7 +22622,7 @@ func (c *Client) HostAddManagedby(
 	kwp := hostAddManagedbyKwParams{
 		HostAddManagedbyArgs:         reqArgs,
 		HostAddManagedbyOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "host_add_managedby",
@@ -22473,6 +22633,7 @@ func (c *Client) HostAddManagedby(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostAddManagedbyResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -22583,7 +22744,7 @@ func (c *Client) HostAddPrincipal(
 	kwp := hostAddPrincipalKwParams{
 		HostAddPrincipalArgs:         reqArgs,
 		HostAddPrincipalOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "host_add_principal",
@@ -22594,6 +22755,7 @@ func (c *Client) HostAddPrincipal(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostAddPrincipalResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -22704,7 +22866,7 @@ func (c *Client) HostAllowCreateKeytab(
 	kwp := hostAllowCreateKeytabKwParams{
 		HostAllowCreateKeytabArgs:         reqArgs,
 		HostAllowCreateKeytabOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "host_allow_create_keytab",
@@ -22715,6 +22877,7 @@ func (c *Client) HostAllowCreateKeytab(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostAllowCreateKeytabResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -22843,7 +23006,7 @@ func (c *Client) HostAllowRetrieveKeytab(
 	kwp := hostAllowRetrieveKeytabKwParams{
 		HostAllowRetrieveKeytabArgs:         reqArgs,
 		HostAllowRetrieveKeytabOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                             apiVersion,
 	}
 	req := request{
 		Method: "host_allow_retrieve_keytab",
@@ -22854,6 +23017,7 @@ func (c *Client) HostAllowRetrieveKeytab(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostAllowRetrieveKeytabResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -22993,6 +23157,7 @@ func (c *Client) HostDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -23102,6 +23267,7 @@ func (c *Client) HostDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -23188,7 +23354,7 @@ func (c *Client) HostDisallowCreateKeytab(
 	kwp := hostDisallowCreateKeytabKwParams{
 		HostDisallowCreateKeytabArgs:         reqArgs,
 		HostDisallowCreateKeytabOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "host_disallow_create_keytab",
@@ -23199,6 +23365,7 @@ func (c *Client) HostDisallowCreateKeytab(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostDisallowCreateKeytabResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -23327,7 +23494,7 @@ func (c *Client) HostDisallowRetrieveKeytab(
 	kwp := hostDisallowRetrieveKeytabKwParams{
 		HostDisallowRetrieveKeytabArgs:         reqArgs,
 		HostDisallowRetrieveKeytabOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                apiVersion,
 	}
 	req := request{
 		Method: "host_disallow_retrieve_keytab",
@@ -23338,6 +23505,7 @@ func (c *Client) HostDisallowRetrieveKeytab(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostDisallowRetrieveKeytabResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -23478,6 +23646,7 @@ func (c *Client) HostFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -23779,6 +23948,7 @@ func (c *Client) HostMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -24029,6 +24199,7 @@ func (c *Client) HostRemoveCert(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostRemoveCertResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -24139,7 +24310,7 @@ func (c *Client) HostRemoveManagedby(
 	kwp := hostRemoveManagedbyKwParams{
 		HostRemoveManagedbyArgs:         reqArgs,
 		HostRemoveManagedbyOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "host_remove_managedby",
@@ -24150,6 +24321,7 @@ func (c *Client) HostRemoveManagedby(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostRemoveManagedbyResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -24260,7 +24432,7 @@ func (c *Client) HostRemovePrincipal(
 	kwp := hostRemovePrincipalKwParams{
 		HostRemovePrincipalArgs:         reqArgs,
 		HostRemovePrincipalOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "host_remove_principal",
@@ -24271,6 +24443,7 @@ func (c *Client) HostRemovePrincipal(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostRemovePrincipalResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -24392,6 +24565,7 @@ func (c *Client) HostShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -24519,6 +24693,7 @@ func (c *Client) HostgroupAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostgroupAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -24643,7 +24818,7 @@ func (c *Client) HostgroupAddMember(
 	kwp := hostgroupAddMemberKwParams{
 		HostgroupAddMemberArgs:         reqArgs,
 		HostgroupAddMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "hostgroup_add_member",
@@ -24654,6 +24829,7 @@ func (c *Client) HostgroupAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostgroupAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -24781,6 +24957,7 @@ func (c *Client) HostgroupDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostgroupDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -24885,6 +25062,7 @@ func (c *Client) HostgroupFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostgroupFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -25102,6 +25280,7 @@ func (c *Client) HostgroupMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostgroupModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -25239,7 +25418,7 @@ func (c *Client) HostgroupRemoveMember(
 	kwp := hostgroupRemoveMemberKwParams{
 		HostgroupRemoveMemberArgs:         reqArgs,
 		HostgroupRemoveMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "hostgroup_remove_member",
@@ -25250,6 +25429,7 @@ func (c *Client) HostgroupRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostgroupRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -25377,6 +25557,7 @@ func (c *Client) HostgroupShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res hostgroupShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -25498,6 +25679,7 @@ func (c *Client) I18nMessages(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res i18nMessagesResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -25566,7 +25748,7 @@ func (c *Client) IdoverridegroupAdd(
 	kwp := idoverridegroupAddKwParams{
 		IdoverridegroupAddArgs:         reqArgs,
 		IdoverridegroupAddOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "idoverridegroup_add",
@@ -25577,6 +25759,7 @@ func (c *Client) IdoverridegroupAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverridegroupAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -25719,7 +25902,7 @@ func (c *Client) IdoverridegroupDel(
 	kwp := idoverridegroupDelKwParams{
 		IdoverridegroupDelArgs:         reqArgs,
 		IdoverridegroupDelOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "idoverridegroup_del",
@@ -25730,6 +25913,7 @@ func (c *Client) IdoverridegroupDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverridegroupDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -25835,7 +26019,7 @@ func (c *Client) IdoverridegroupFind(
 	kwp := idoverridegroupFindKwParams{
 		IdoverridegroupFindArgs:         reqArgs,
 		IdoverridegroupFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "idoverridegroup_find",
@@ -25846,6 +26030,7 @@ func (c *Client) IdoverridegroupFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverridegroupFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -25998,7 +26183,7 @@ func (c *Client) IdoverridegroupMod(
 	kwp := idoverridegroupModKwParams{
 		IdoverridegroupModArgs:         reqArgs,
 		IdoverridegroupModOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "idoverridegroup_mod",
@@ -26009,6 +26194,7 @@ func (c *Client) IdoverridegroupMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverridegroupModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -26170,7 +26356,7 @@ func (c *Client) IdoverridegroupShow(
 	kwp := idoverridegroupShowKwParams{
 		IdoverridegroupShowArgs:         reqArgs,
 		IdoverridegroupShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "idoverridegroup_show",
@@ -26181,6 +26367,7 @@ func (c *Client) IdoverridegroupShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverridegroupShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -26297,7 +26484,7 @@ func (c *Client) IdoverrideuserAdd(
 	kwp := idoverrideuserAddKwParams{
 		IdoverrideuserAddArgs:         reqArgs,
 		IdoverrideuserAddOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "idoverrideuser_add",
@@ -26308,6 +26495,7 @@ func (c *Client) IdoverrideuserAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverrideuserAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -26492,7 +26680,7 @@ func (c *Client) IdoverrideuserAddCert(
 	kwp := idoverrideuserAddCertKwParams{
 		IdoverrideuserAddCertArgs:         reqArgs,
 		IdoverrideuserAddCertOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "idoverrideuser_add_cert",
@@ -26503,6 +26691,7 @@ func (c *Client) IdoverrideuserAddCert(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverrideuserAddCertResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -26619,7 +26808,7 @@ func (c *Client) IdoverrideuserDel(
 	kwp := idoverrideuserDelKwParams{
 		IdoverrideuserDelArgs:         reqArgs,
 		IdoverrideuserDelOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "idoverrideuser_del",
@@ -26630,6 +26819,7 @@ func (c *Client) IdoverrideuserDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverrideuserDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -26735,7 +26925,7 @@ func (c *Client) IdoverrideuserFind(
 	kwp := idoverrideuserFindKwParams{
 		IdoverrideuserFindArgs:         reqArgs,
 		IdoverrideuserFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "idoverrideuser_find",
@@ -26746,6 +26936,7 @@ func (c *Client) IdoverrideuserFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverrideuserFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -26928,7 +27119,7 @@ func (c *Client) IdoverrideuserMod(
 	kwp := idoverrideuserModKwParams{
 		IdoverrideuserModArgs:         reqArgs,
 		IdoverrideuserModOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "idoverrideuser_mod",
@@ -26939,6 +27130,7 @@ func (c *Client) IdoverrideuserMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverrideuserModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -27142,7 +27334,7 @@ func (c *Client) IdoverrideuserRemoveCert(
 	kwp := idoverrideuserRemoveCertKwParams{
 		IdoverrideuserRemoveCertArgs:         reqArgs,
 		IdoverrideuserRemoveCertOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "idoverrideuser_remove_cert",
@@ -27153,6 +27345,7 @@ func (c *Client) IdoverrideuserRemoveCert(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverrideuserRemoveCertResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -27269,7 +27462,7 @@ func (c *Client) IdoverrideuserShow(
 	kwp := idoverrideuserShowKwParams{
 		IdoverrideuserShowArgs:         reqArgs,
 		IdoverrideuserShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "idoverrideuser_show",
@@ -27280,6 +27473,7 @@ func (c *Client) IdoverrideuserShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idoverrideuserShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -27437,6 +27631,7 @@ func (c *Client) IdrangeAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idrangeAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -27602,6 +27797,7 @@ func (c *Client) IdrangeDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idrangeDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -27706,6 +27902,7 @@ func (c *Client) IdrangeFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idrangeFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -27888,6 +28085,7 @@ func (c *Client) IdrangeMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idrangeModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -28060,6 +28258,7 @@ func (c *Client) IdrangeShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idrangeShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -28175,6 +28374,7 @@ func (c *Client) IdviewAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idviewAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -28304,6 +28504,7 @@ func (c *Client) IdviewApply(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idviewApplyResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -28419,6 +28620,7 @@ func (c *Client) IdviewDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idviewDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -28523,6 +28725,7 @@ func (c *Client) IdviewFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idviewFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -28662,6 +28865,7 @@ func (c *Client) IdviewMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idviewModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -28810,6 +29014,7 @@ func (c *Client) IdviewShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idviewShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -28931,6 +29136,7 @@ func (c *Client) IdviewUnapply(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res idviewUnapplyResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -29040,6 +29246,7 @@ func (c *Client) Join(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res joinResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -29139,6 +29346,7 @@ func (c *Client) JSONMetadata(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res jsonMetadataResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -29248,6 +29456,7 @@ func (c *Client) KraIsEnabled(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res kraIsEnabledResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -29340,6 +29549,7 @@ func (c *Client) KrbtpolicyMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res krbtpolicyModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -29483,6 +29693,7 @@ func (c *Client) KrbtpolicyReset(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res krbtpolicyResetResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -29587,6 +29798,7 @@ func (c *Client) KrbtpolicyShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res krbtpolicyShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -29696,6 +29908,7 @@ func (c *Client) LocationAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res locationAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -29825,6 +30038,7 @@ func (c *Client) LocationDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res locationDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -29929,6 +30143,7 @@ func (c *Client) LocationFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res locationFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -30068,6 +30283,7 @@ func (c *Client) LocationMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res locationModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -30210,6 +30426,7 @@ func (c *Client) LocationShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res locationShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -30331,6 +30548,7 @@ func (c *Client) MigrateDs(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res migrateDsResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -30554,6 +30772,7 @@ func (c *Client) NetgroupAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res netgroupAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -30702,7 +30921,7 @@ func (c *Client) NetgroupAddMember(
 	kwp := netgroupAddMemberKwParams{
 		NetgroupAddMemberArgs:         reqArgs,
 		NetgroupAddMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "netgroup_add_member",
@@ -30713,6 +30932,7 @@ func (c *Client) NetgroupAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res netgroupAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -30858,6 +31078,7 @@ func (c *Client) NetgroupDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res netgroupDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -30962,6 +31183,7 @@ func (c *Client) NetgroupFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res netgroupFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -31221,6 +31443,7 @@ func (c *Client) NetgroupMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res netgroupModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -31382,7 +31605,7 @@ func (c *Client) NetgroupRemoveMember(
 	kwp := netgroupRemoveMemberKwParams{
 		NetgroupRemoveMemberArgs:         reqArgs,
 		NetgroupRemoveMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "netgroup_remove_member",
@@ -31393,6 +31616,7 @@ func (c *Client) NetgroupRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res netgroupRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -31538,6 +31762,7 @@ func (c *Client) NetgroupShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res netgroupShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -31659,6 +31884,7 @@ func (c *Client) OtpconfigMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res otpconfigModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -31813,6 +32039,7 @@ func (c *Client) OtpconfigShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res otpconfigShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -31923,6 +32150,7 @@ func (c *Client) OtptokenAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res otptokenAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -32137,7 +32365,7 @@ func (c *Client) OtptokenAddManagedby(
 	kwp := otptokenAddManagedbyKwParams{
 		OtptokenAddManagedbyArgs:         reqArgs,
 		OtptokenAddManagedbyOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "otptoken_add_managedby",
@@ -32148,6 +32376,7 @@ func (c *Client) OtptokenAddManagedby(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res otptokenAddManagedbyResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -32269,6 +32498,7 @@ func (c *Client) OtptokenDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res otptokenDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -32373,6 +32603,7 @@ func (c *Client) OtptokenFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res otptokenFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -32596,6 +32827,7 @@ func (c *Client) OtptokenMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res otptokenModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -32781,7 +33013,7 @@ func (c *Client) OtptokenRemoveManagedby(
 	kwp := otptokenRemoveManagedbyKwParams{
 		OtptokenRemoveManagedbyArgs:         reqArgs,
 		OtptokenRemoveManagedbyOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                             apiVersion,
 	}
 	req := request{
 		Method: "otptoken_remove_managedby",
@@ -32792,6 +33024,7 @@ func (c *Client) OtptokenRemoveManagedby(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res otptokenRemoveManagedbyResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -32913,6 +33146,7 @@ func (c *Client) OtptokenShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res otptokenShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -33035,6 +33269,7 @@ func (c *Client) OutputFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res outputFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -33156,6 +33391,7 @@ func (c *Client) OutputShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res outputShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -33272,6 +33508,7 @@ func (c *Client) ParamFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res paramFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -33393,6 +33630,7 @@ func (c *Client) ParamShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res paramShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -33508,6 +33746,7 @@ func (c *Client) Passwd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res passwdResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -33623,6 +33862,7 @@ func (c *Client) PermissionAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res permissionAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -33831,7 +34071,7 @@ func (c *Client) PermissionAddMember(
 	kwp := permissionAddMemberKwParams{
 		PermissionAddMemberArgs:         reqArgs,
 		PermissionAddMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "permission_add_member",
@@ -33842,6 +34082,7 @@ func (c *Client) PermissionAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res permissionAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -33952,7 +34193,7 @@ func (c *Client) PermissionAddNoaci(
 	kwp := permissionAddNoaciKwParams{
 		PermissionAddNoaciArgs:         reqArgs,
 		PermissionAddNoaciOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "permission_add_noaci",
@@ -33963,6 +34204,7 @@ func (c *Client) PermissionAddNoaci(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res permissionAddNoaciResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -34084,6 +34326,7 @@ func (c *Client) PermissionDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res permissionDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -34194,6 +34437,7 @@ func (c *Client) PermissionFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res permissionFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -34441,6 +34685,7 @@ func (c *Client) PermissionMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res permissionModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -34680,7 +34925,7 @@ func (c *Client) PermissionRemoveMember(
 	kwp := permissionRemoveMemberKwParams{
 		PermissionRemoveMemberArgs:         reqArgs,
 		PermissionRemoveMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                            apiVersion,
 	}
 	req := request{
 		Method: "permission_remove_member",
@@ -34691,6 +34936,7 @@ func (c *Client) PermissionRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res permissionRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -34812,6 +35058,7 @@ func (c *Client) PermissionShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res permissionShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -34933,6 +35180,7 @@ func (c *Client) Ping(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res pingResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -35012,6 +35260,7 @@ func (c *Client) PkinitAnonymous(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res pkinitAnonymousResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -35097,6 +35346,7 @@ func (c *Client) Plugins(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res pluginsResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -35200,6 +35450,7 @@ func (c *Client) PrivilegeAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res privilegeAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -35324,7 +35575,7 @@ func (c *Client) PrivilegeAddMember(
 	kwp := privilegeAddMemberKwParams{
 		PrivilegeAddMemberArgs:         reqArgs,
 		PrivilegeAddMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "privilege_add_member",
@@ -35335,6 +35586,7 @@ func (c *Client) PrivilegeAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res privilegeAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -35445,7 +35697,7 @@ func (c *Client) PrivilegeAddPermission(
 	kwp := privilegeAddPermissionKwParams{
 		PrivilegeAddPermissionArgs:         reqArgs,
 		PrivilegeAddPermissionOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                            apiVersion,
 	}
 	req := request{
 		Method: "privilege_add_permission",
@@ -35456,6 +35708,7 @@ func (c *Client) PrivilegeAddPermission(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res privilegeAddPermissionResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -35577,6 +35830,7 @@ func (c *Client) PrivilegeDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res privilegeDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -35681,6 +35935,7 @@ func (c *Client) PrivilegeFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res privilegeFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -35826,6 +36081,7 @@ func (c *Client) PrivilegeMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res privilegeModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -35969,7 +36225,7 @@ func (c *Client) PrivilegeRemoveMember(
 	kwp := privilegeRemoveMemberKwParams{
 		PrivilegeRemoveMemberArgs:         reqArgs,
 		PrivilegeRemoveMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "privilege_remove_member",
@@ -35980,6 +36236,7 @@ func (c *Client) PrivilegeRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res privilegeRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -36090,7 +36347,7 @@ func (c *Client) PrivilegeRemovePermission(
 	kwp := privilegeRemovePermissionKwParams{
 		PrivilegeRemovePermissionArgs:         reqArgs,
 		PrivilegeRemovePermissionOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                               apiVersion,
 	}
 	req := request{
 		Method: "privilege_remove_permission",
@@ -36101,6 +36358,7 @@ func (c *Client) PrivilegeRemovePermission(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res privilegeRemovePermissionResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -36222,6 +36480,7 @@ func (c *Client) PrivilegeShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res privilegeShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -36343,6 +36602,7 @@ func (c *Client) PwpolicyAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res pwpolicyAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -36520,6 +36780,7 @@ func (c *Client) PwpolicyDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res pwpolicyDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -36624,6 +36885,7 @@ func (c *Client) PwpolicyFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res pwpolicyFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -36812,6 +37074,7 @@ func (c *Client) PwpolicyMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res pwpolicyModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -36997,6 +37260,7 @@ func (c *Client) PwpolicyShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res pwpolicyShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -37112,6 +37376,7 @@ func (c *Client) RadiusproxyAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res radiusproxyAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -37271,6 +37536,7 @@ func (c *Client) RadiusproxyDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res radiusproxyDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -37375,6 +37641,7 @@ func (c *Client) RadiusproxyFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res radiusproxyFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -37544,6 +37811,7 @@ func (c *Client) RadiusproxyMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res radiusproxyModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -37722,6 +37990,7 @@ func (c *Client) RadiusproxyShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res radiusproxyShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -37837,6 +38106,7 @@ func (c *Client) RealmdomainsMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res realmdomainsModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -37980,7 +38250,7 @@ func (c *Client) RealmdomainsShow(
 	kwp := realmdomainsShowKwParams{
 		RealmdomainsShowArgs:         reqArgs,
 		RealmdomainsShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "realmdomains_show",
@@ -37991,6 +38261,7 @@ func (c *Client) RealmdomainsShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res realmdomainsShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -38100,6 +38371,7 @@ func (c *Client) RoleAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res roleAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -38235,6 +38507,7 @@ func (c *Client) RoleAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res roleAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -38369,7 +38642,7 @@ func (c *Client) RoleAddPrivilege(
 	kwp := roleAddPrivilegeKwParams{
 		RoleAddPrivilegeArgs:         reqArgs,
 		RoleAddPrivilegeOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "role_add_privilege",
@@ -38380,6 +38653,7 @@ func (c *Client) RoleAddPrivilege(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res roleAddPrivilegeResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -38501,6 +38775,7 @@ func (c *Client) RoleDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res roleDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -38605,6 +38880,7 @@ func (c *Client) RoleFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res roleFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -38750,6 +39026,7 @@ func (c *Client) RoleMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res roleModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -38893,7 +39170,7 @@ func (c *Client) RoleRemoveMember(
 	kwp := roleRemoveMemberKwParams{
 		RoleRemoveMemberArgs:         reqArgs,
 		RoleRemoveMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "role_remove_member",
@@ -38904,6 +39181,7 @@ func (c *Client) RoleRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res roleRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -39038,7 +39316,7 @@ func (c *Client) RoleRemovePrivilege(
 	kwp := roleRemovePrivilegeKwParams{
 		RoleRemovePrivilegeArgs:         reqArgs,
 		RoleRemovePrivilegeOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "role_remove_privilege",
@@ -39049,6 +39327,7 @@ func (c *Client) RoleRemovePrivilege(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res roleRemovePrivilegeResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -39170,6 +39449,7 @@ func (c *Client) RoleShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res roleShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -39291,6 +39571,7 @@ func (c *Client) Schema(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res schemaResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -39376,6 +39657,7 @@ func (c *Client) SelfserviceAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selfserviceAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -39497,6 +39779,7 @@ func (c *Client) SelfserviceDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selfserviceDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -39595,6 +39878,7 @@ func (c *Client) SelfserviceFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selfserviceFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -39728,6 +40012,7 @@ func (c *Client) SelfserviceMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selfserviceModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -39849,6 +40134,7 @@ func (c *Client) SelfserviceShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selfserviceShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -39947,7 +40233,7 @@ func (c *Client) SelinuxusermapAdd(
 	kwp := selinuxusermapAddKwParams{
 		SelinuxusermapAddArgs:         reqArgs,
 		SelinuxusermapAddOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_add",
@@ -39958,6 +40244,7 @@ func (c *Client) SelinuxusermapAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -40112,7 +40399,7 @@ func (c *Client) SelinuxusermapAddHost(
 	kwp := selinuxusermapAddHostKwParams{
 		SelinuxusermapAddHostArgs:         reqArgs,
 		SelinuxusermapAddHostOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_add_host",
@@ -40123,6 +40410,7 @@ func (c *Client) SelinuxusermapAddHost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapAddHostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -40239,7 +40527,7 @@ func (c *Client) SelinuxusermapAddUser(
 	kwp := selinuxusermapAddUserKwParams{
 		SelinuxusermapAddUserArgs:         reqArgs,
 		SelinuxusermapAddUserOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_add_user",
@@ -40250,6 +40538,7 @@ func (c *Client) SelinuxusermapAddUser(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapAddUserResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -40366,7 +40655,7 @@ func (c *Client) SelinuxusermapDel(
 	kwp := selinuxusermapDelKwParams{
 		SelinuxusermapDelArgs:         reqArgs,
 		SelinuxusermapDelOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_del",
@@ -40377,6 +40666,7 @@ func (c *Client) SelinuxusermapDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -40469,7 +40759,7 @@ func (c *Client) SelinuxusermapDisable(
 	kwp := selinuxusermapDisableKwParams{
 		SelinuxusermapDisableArgs:         reqArgs,
 		SelinuxusermapDisableOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_disable",
@@ -40480,6 +40770,7 @@ func (c *Client) SelinuxusermapDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -40566,7 +40857,7 @@ func (c *Client) SelinuxusermapEnable(
 	kwp := selinuxusermapEnableKwParams{
 		SelinuxusermapEnableArgs:         reqArgs,
 		SelinuxusermapEnableOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_enable",
@@ -40577,6 +40868,7 @@ func (c *Client) SelinuxusermapEnable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapEnableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -40664,7 +40956,7 @@ func (c *Client) SelinuxusermapFind(
 	kwp := selinuxusermapFindKwParams{
 		SelinuxusermapFindArgs:         reqArgs,
 		SelinuxusermapFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_find",
@@ -40675,6 +40967,7 @@ func (c *Client) SelinuxusermapFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -40839,7 +41132,7 @@ func (c *Client) SelinuxusermapMod(
 	kwp := selinuxusermapModKwParams{
 		SelinuxusermapModArgs:         reqArgs,
 		SelinuxusermapModOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_mod",
@@ -40850,6 +41143,7 @@ func (c *Client) SelinuxusermapMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -41017,7 +41311,7 @@ func (c *Client) SelinuxusermapRemoveHost(
 	kwp := selinuxusermapRemoveHostKwParams{
 		SelinuxusermapRemoveHostArgs:         reqArgs,
 		SelinuxusermapRemoveHostOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_remove_host",
@@ -41028,6 +41322,7 @@ func (c *Client) SelinuxusermapRemoveHost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapRemoveHostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -41144,7 +41439,7 @@ func (c *Client) SelinuxusermapRemoveUser(
 	kwp := selinuxusermapRemoveUserKwParams{
 		SelinuxusermapRemoveUserArgs:         reqArgs,
 		SelinuxusermapRemoveUserOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_remove_user",
@@ -41155,6 +41450,7 @@ func (c *Client) SelinuxusermapRemoveUser(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapRemoveUserResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -41271,7 +41567,7 @@ func (c *Client) SelinuxusermapShow(
 	kwp := selinuxusermapShowKwParams{
 		SelinuxusermapShowArgs:         reqArgs,
 		SelinuxusermapShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "selinuxusermap_show",
@@ -41282,6 +41578,7 @@ func (c *Client) SelinuxusermapShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res selinuxusermapShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -41403,6 +41700,7 @@ func (c *Client) ServerConncheck(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serverConncheckResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -41506,6 +41804,7 @@ func (c *Client) ServerDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serverDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -41628,6 +41927,7 @@ func (c *Client) ServerFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serverFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -41809,6 +42109,7 @@ func (c *Client) ServerMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serverModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -41964,6 +42265,7 @@ func (c *Client) ServerRoleFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serverRoleFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -42103,6 +42405,7 @@ func (c *Client) ServerRoleShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serverRoleShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -42218,6 +42521,7 @@ func (c *Client) ServerShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serverShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -42339,6 +42643,7 @@ func (c *Client) ServiceAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -42510,6 +42815,7 @@ func (c *Client) ServiceAddCert(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceAddCertResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -42631,6 +42937,7 @@ func (c *Client) ServiceAddHost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceAddHostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -42741,7 +43048,7 @@ func (c *Client) ServiceAddPrincipal(
 	kwp := serviceAddPrincipalKwParams{
 		ServiceAddPrincipalArgs:         reqArgs,
 		ServiceAddPrincipalOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "service_add_principal",
@@ -42752,6 +43059,7 @@ func (c *Client) ServiceAddPrincipal(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceAddPrincipalResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -42862,7 +43170,7 @@ func (c *Client) ServiceAllowCreateKeytab(
 	kwp := serviceAllowCreateKeytabKwParams{
 		ServiceAllowCreateKeytabArgs:         reqArgs,
 		ServiceAllowCreateKeytabOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "service_allow_create_keytab",
@@ -42873,6 +43181,7 @@ func (c *Client) ServiceAllowCreateKeytab(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceAllowCreateKeytabResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -43001,7 +43310,7 @@ func (c *Client) ServiceAllowRetrieveKeytab(
 	kwp := serviceAllowRetrieveKeytabKwParams{
 		ServiceAllowRetrieveKeytabArgs:         reqArgs,
 		ServiceAllowRetrieveKeytabOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                apiVersion,
 	}
 	req := request{
 		Method: "service_allow_retrieve_keytab",
@@ -43012,6 +43321,7 @@ func (c *Client) ServiceAllowRetrieveKeytab(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceAllowRetrieveKeytabResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -43151,6 +43461,7 @@ func (c *Client) ServiceDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -43254,6 +43565,7 @@ func (c *Client) ServiceDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -43340,7 +43652,7 @@ func (c *Client) ServiceDisallowCreateKeytab(
 	kwp := serviceDisallowCreateKeytabKwParams{
 		ServiceDisallowCreateKeytabArgs:         reqArgs,
 		ServiceDisallowCreateKeytabOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                 apiVersion,
 	}
 	req := request{
 		Method: "service_disallow_create_keytab",
@@ -43351,6 +43663,7 @@ func (c *Client) ServiceDisallowCreateKeytab(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceDisallowCreateKeytabResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -43490,6 +43803,7 @@ func (c *Client) ServiceDisallowRetrieveKeytab(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceDisallowRetrieveKeytabResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -43630,6 +43944,7 @@ func (c *Client) ServiceFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -43799,6 +44114,7 @@ func (c *Client) ServiceMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -43972,7 +44288,7 @@ func (c *Client) ServiceRemoveCert(
 	kwp := serviceRemoveCertKwParams{
 		ServiceRemoveCertArgs:         reqArgs,
 		ServiceRemoveCertOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "service_remove_cert",
@@ -43983,6 +44299,7 @@ func (c *Client) ServiceRemoveCert(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceRemoveCertResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -44093,7 +44410,7 @@ func (c *Client) ServiceRemoveHost(
 	kwp := serviceRemoveHostKwParams{
 		ServiceRemoveHostArgs:         reqArgs,
 		ServiceRemoveHostOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "service_remove_host",
@@ -44104,6 +44421,7 @@ func (c *Client) ServiceRemoveHost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceRemoveHostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -44214,7 +44532,7 @@ func (c *Client) ServiceRemovePrincipal(
 	kwp := serviceRemovePrincipalKwParams{
 		ServiceRemovePrincipalArgs:         reqArgs,
 		ServiceRemovePrincipalOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                            apiVersion,
 	}
 	req := request{
 		Method: "service_remove_principal",
@@ -44225,6 +44543,7 @@ func (c *Client) ServiceRemovePrincipal(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceRemovePrincipalResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -44346,6 +44665,7 @@ func (c *Client) ServiceShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res serviceShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -44462,7 +44782,7 @@ func (c *Client) ServicedelegationruleAdd(
 	kwp := servicedelegationruleAddKwParams{
 		ServicedelegationruleAddArgs:         reqArgs,
 		ServicedelegationruleAddOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "servicedelegationrule_add",
@@ -44473,6 +44793,7 @@ func (c *Client) ServicedelegationruleAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationruleAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -44602,6 +44923,7 @@ func (c *Client) ServicedelegationruleAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationruleAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -44723,6 +45045,7 @@ func (c *Client) ServicedelegationruleAddTarget(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationruleAddTargetResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -44833,7 +45156,7 @@ func (c *Client) ServicedelegationruleDel(
 	kwp := servicedelegationruleDelKwParams{
 		ServicedelegationruleDelArgs:         reqArgs,
 		ServicedelegationruleDelOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "servicedelegationrule_del",
@@ -44844,6 +45167,7 @@ func (c *Client) ServicedelegationruleDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationruleDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -44937,7 +45261,7 @@ func (c *Client) ServicedelegationruleFind(
 	kwp := servicedelegationruleFindKwParams{
 		ServicedelegationruleFindArgs:         reqArgs,
 		ServicedelegationruleFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                               apiVersion,
 	}
 	req := request{
 		Method: "servicedelegationrule_find",
@@ -44948,6 +45272,7 @@ func (c *Client) ServicedelegationruleFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationruleFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -45087,6 +45412,7 @@ func (c *Client) ServicedelegationruleRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationruleRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -45208,6 +45534,7 @@ func (c *Client) ServicedelegationruleRemoveTarget(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationruleRemoveTargetResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -45318,7 +45645,7 @@ func (c *Client) ServicedelegationruleShow(
 	kwp := servicedelegationruleShowKwParams{
 		ServicedelegationruleShowArgs:         reqArgs,
 		ServicedelegationruleShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                               apiVersion,
 	}
 	req := request{
 		Method: "servicedelegationrule_show",
@@ -45329,6 +45656,7 @@ func (c *Client) ServicedelegationruleShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationruleShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -45439,7 +45767,7 @@ func (c *Client) ServicedelegationtargetAdd(
 	kwp := servicedelegationtargetAddKwParams{
 		ServicedelegationtargetAddArgs:         reqArgs,
 		ServicedelegationtargetAddOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                apiVersion,
 	}
 	req := request{
 		Method: "servicedelegationtarget_add",
@@ -45450,6 +45778,7 @@ func (c *Client) ServicedelegationtargetAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationtargetAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -45573,6 +45902,7 @@ func (c *Client) ServicedelegationtargetAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationtargetAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -45677,7 +46007,7 @@ func (c *Client) ServicedelegationtargetDel(
 	kwp := servicedelegationtargetDelKwParams{
 		ServicedelegationtargetDelArgs:         reqArgs,
 		ServicedelegationtargetDelOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                apiVersion,
 	}
 	req := request{
 		Method: "servicedelegationtarget_del",
@@ -45688,6 +46018,7 @@ func (c *Client) ServicedelegationtargetDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationtargetDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -45781,7 +46112,7 @@ func (c *Client) ServicedelegationtargetFind(
 	kwp := servicedelegationtargetFindKwParams{
 		ServicedelegationtargetFindArgs:         reqArgs,
 		ServicedelegationtargetFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                 apiVersion,
 	}
 	req := request{
 		Method: "servicedelegationtarget_find",
@@ -45792,6 +46123,7 @@ func (c *Client) ServicedelegationtargetFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationtargetFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -45925,6 +46257,7 @@ func (c *Client) ServicedelegationtargetRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationtargetRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -46029,7 +46362,7 @@ func (c *Client) ServicedelegationtargetShow(
 	kwp := servicedelegationtargetShowKwParams{
 		ServicedelegationtargetShowArgs:         reqArgs,
 		ServicedelegationtargetShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                 apiVersion,
 	}
 	req := request{
 		Method: "servicedelegationtarget_show",
@@ -46040,6 +46373,7 @@ func (c *Client) ServicedelegationtargetShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res servicedelegationtargetShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -46155,6 +46489,7 @@ func (c *Client) SessionLogout(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sessionLogoutResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -46234,6 +46569,7 @@ func (c *Client) SidgenWasRun(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sidgenWasRunResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -46302,7 +46638,7 @@ func (c *Client) StageuserActivate(
 	kwp := stageuserActivateKwParams{
 		StageuserActivateArgs:         reqArgs,
 		StageuserActivateOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "stageuser_activate",
@@ -46313,6 +46649,7 @@ func (c *Client) StageuserActivate(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res stageuserActivateResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -46428,6 +46765,7 @@ func (c *Client) StageuserAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res stageuserAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -46774,7 +47112,7 @@ func (c *Client) StageuserAddManager(
 	kwp := stageuserAddManagerKwParams{
 		StageuserAddManagerArgs:         reqArgs,
 		StageuserAddManagerOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "stageuser_add_manager",
@@ -46785,6 +47123,7 @@ func (c *Client) StageuserAddManager(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res stageuserAddManagerResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -46906,6 +47245,7 @@ func (c *Client) StageuserDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res stageuserDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -47010,6 +47350,7 @@ func (c *Client) StageuserFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res stageuserFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -47419,6 +47760,7 @@ func (c *Client) StageuserMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res stageuserModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -47778,7 +48120,7 @@ func (c *Client) StageuserRemoveManager(
 	kwp := stageuserRemoveManagerKwParams{
 		StageuserRemoveManagerArgs:         reqArgs,
 		StageuserRemoveManagerOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                            apiVersion,
 	}
 	req := request{
 		Method: "stageuser_remove_manager",
@@ -47789,6 +48131,7 @@ func (c *Client) StageuserRemoveManager(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res stageuserRemoveManagerResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -47910,6 +48253,7 @@ func (c *Client) StageuserShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res stageuserShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -48031,6 +48375,7 @@ func (c *Client) SudocmdAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -48166,6 +48511,7 @@ func (c *Client) SudocmdDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -48270,6 +48616,7 @@ func (c *Client) SudocmdFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -48415,6 +48762,7 @@ func (c *Client) SudocmdMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -48563,6 +48911,7 @@ func (c *Client) SudocmdShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -48684,6 +49033,7 @@ func (c *Client) SudocmdgroupAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdgroupAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -48808,7 +49158,7 @@ func (c *Client) SudocmdgroupAddMember(
 	kwp := sudocmdgroupAddMemberKwParams{
 		SudocmdgroupAddMemberArgs:         reqArgs,
 		SudocmdgroupAddMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "sudocmdgroup_add_member",
@@ -48819,6 +49169,7 @@ func (c *Client) SudocmdgroupAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdgroupAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -48940,6 +49291,7 @@ func (c *Client) SudocmdgroupDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdgroupDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -49033,7 +49385,7 @@ func (c *Client) SudocmdgroupFind(
 	kwp := sudocmdgroupFindKwParams{
 		SudocmdgroupFindArgs:         reqArgs,
 		SudocmdgroupFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "sudocmdgroup_find",
@@ -49044,6 +49396,7 @@ func (c *Client) SudocmdgroupFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdgroupFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -49189,6 +49542,7 @@ func (c *Client) SudocmdgroupMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdgroupModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -49326,7 +49680,7 @@ func (c *Client) SudocmdgroupRemoveMember(
 	kwp := sudocmdgroupRemoveMemberKwParams{
 		SudocmdgroupRemoveMemberArgs:         reqArgs,
 		SudocmdgroupRemoveMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "sudocmdgroup_remove_member",
@@ -49337,6 +49691,7 @@ func (c *Client) SudocmdgroupRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdgroupRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -49447,7 +49802,7 @@ func (c *Client) SudocmdgroupShow(
 	kwp := sudocmdgroupShowKwParams{
 		SudocmdgroupShowArgs:         reqArgs,
 		SudocmdgroupShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "sudocmdgroup_show",
@@ -49458,6 +49813,7 @@ func (c *Client) SudocmdgroupShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudocmdgroupShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -49579,6 +49935,7 @@ func (c *Client) SudoruleAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -49769,7 +50126,7 @@ func (c *Client) SudoruleAddAllowCommand(
 	kwp := sudoruleAddAllowCommandKwParams{
 		SudoruleAddAllowCommandArgs:         reqArgs,
 		SudoruleAddAllowCommandOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                             apiVersion,
 	}
 	req := request{
 		Method: "sudorule_add_allow_command",
@@ -49780,6 +50137,7 @@ func (c *Client) SudoruleAddAllowCommand(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleAddAllowCommandResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -49896,7 +50254,7 @@ func (c *Client) SudoruleAddDenyCommand(
 	kwp := sudoruleAddDenyCommandKwParams{
 		SudoruleAddDenyCommandArgs:         reqArgs,
 		SudoruleAddDenyCommandOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                            apiVersion,
 	}
 	req := request{
 		Method: "sudorule_add_deny_command",
@@ -49907,6 +50265,7 @@ func (c *Client) SudoruleAddDenyCommand(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleAddDenyCommandResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -50034,6 +50393,7 @@ func (c *Client) SudoruleAddHost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleAddHostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -50156,7 +50516,7 @@ func (c *Client) SudoruleAddOption(
 	kwp := sudoruleAddOptionKwParams{
 		SudoruleAddOptionArgs:         reqArgs,
 		SudoruleAddOptionOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "sudorule_add_option",
@@ -50167,6 +50527,7 @@ func (c *Client) SudoruleAddOption(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleAddOptionResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -50277,7 +50638,7 @@ func (c *Client) SudoruleAddRunasgroup(
 	kwp := sudoruleAddRunasgroupKwParams{
 		SudoruleAddRunasgroupArgs:         reqArgs,
 		SudoruleAddRunasgroupOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "sudorule_add_runasgroup",
@@ -50288,6 +50649,7 @@ func (c *Client) SudoruleAddRunasgroup(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleAddRunasgroupResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -50398,7 +50760,7 @@ func (c *Client) SudoruleAddRunasuser(
 	kwp := sudoruleAddRunasuserKwParams{
 		SudoruleAddRunasuserArgs:         reqArgs,
 		SudoruleAddRunasuserOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "sudorule_add_runasuser",
@@ -50409,6 +50771,7 @@ func (c *Client) SudoruleAddRunasuser(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleAddRunasuserResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -50536,6 +50899,7 @@ func (c *Client) SudoruleAddUser(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleAddUserResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -50663,6 +51027,7 @@ func (c *Client) SudoruleDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -50766,6 +51131,7 @@ func (c *Client) SudoruleDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -50851,6 +51217,7 @@ func (c *Client) SudoruleEnable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleEnableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -50937,6 +51304,7 @@ func (c *Client) SudoruleFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -51148,6 +51516,7 @@ func (c *Client) SudoruleMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -51351,7 +51720,7 @@ func (c *Client) SudoruleRemoveAllowCommand(
 	kwp := sudoruleRemoveAllowCommandKwParams{
 		SudoruleRemoveAllowCommandArgs:         reqArgs,
 		SudoruleRemoveAllowCommandOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                apiVersion,
 	}
 	req := request{
 		Method: "sudorule_remove_allow_command",
@@ -51362,6 +51731,7 @@ func (c *Client) SudoruleRemoveAllowCommand(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleRemoveAllowCommandResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -51478,7 +51848,7 @@ func (c *Client) SudoruleRemoveDenyCommand(
 	kwp := sudoruleRemoveDenyCommandKwParams{
 		SudoruleRemoveDenyCommandArgs:         reqArgs,
 		SudoruleRemoveDenyCommandOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                               apiVersion,
 	}
 	req := request{
 		Method: "sudorule_remove_deny_command",
@@ -51489,6 +51859,7 @@ func (c *Client) SudoruleRemoveDenyCommand(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleRemoveDenyCommandResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -51605,7 +51976,7 @@ func (c *Client) SudoruleRemoveHost(
 	kwp := sudoruleRemoveHostKwParams{
 		SudoruleRemoveHostArgs:         reqArgs,
 		SudoruleRemoveHostOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "sudorule_remove_host",
@@ -51616,6 +51987,7 @@ func (c *Client) SudoruleRemoveHost(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleRemoveHostResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -51738,7 +52110,7 @@ func (c *Client) SudoruleRemoveOption(
 	kwp := sudoruleRemoveOptionKwParams{
 		SudoruleRemoveOptionArgs:         reqArgs,
 		SudoruleRemoveOptionOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "sudorule_remove_option",
@@ -51749,6 +52121,7 @@ func (c *Client) SudoruleRemoveOption(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleRemoveOptionResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -51859,7 +52232,7 @@ func (c *Client) SudoruleRemoveRunasgroup(
 	kwp := sudoruleRemoveRunasgroupKwParams{
 		SudoruleRemoveRunasgroupArgs:         reqArgs,
 		SudoruleRemoveRunasgroupOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                              apiVersion,
 	}
 	req := request{
 		Method: "sudorule_remove_runasgroup",
@@ -51870,6 +52243,7 @@ func (c *Client) SudoruleRemoveRunasgroup(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleRemoveRunasgroupResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -51980,7 +52354,7 @@ func (c *Client) SudoruleRemoveRunasuser(
 	kwp := sudoruleRemoveRunasuserKwParams{
 		SudoruleRemoveRunasuserArgs:         reqArgs,
 		SudoruleRemoveRunasuserOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                             apiVersion,
 	}
 	req := request{
 		Method: "sudorule_remove_runasuser",
@@ -51991,6 +52365,7 @@ func (c *Client) SudoruleRemoveRunasuser(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleRemoveRunasuserResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -52107,7 +52482,7 @@ func (c *Client) SudoruleRemoveUser(
 	kwp := sudoruleRemoveUserKwParams{
 		SudoruleRemoveUserArgs:         reqArgs,
 		SudoruleRemoveUserOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "sudorule_remove_user",
@@ -52118,6 +52493,7 @@ func (c *Client) SudoruleRemoveUser(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleRemoveUserResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -52245,6 +52621,7 @@ func (c *Client) SudoruleShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res sudoruleShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -52367,6 +52744,7 @@ func (c *Client) TopicFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topicFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -52482,6 +52860,7 @@ func (c *Client) TopicShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topicShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -52580,7 +52959,7 @@ func (c *Client) TopologysegmentAdd(
 	kwp := topologysegmentAddKwParams{
 		TopologysegmentAddArgs:         reqArgs,
 		TopologysegmentAddOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "topologysegment_add",
@@ -52591,6 +52970,7 @@ func (c *Client) TopologysegmentAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysegmentAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -52757,7 +53137,7 @@ func (c *Client) TopologysegmentDel(
 	kwp := topologysegmentDelKwParams{
 		TopologysegmentDelArgs:         reqArgs,
 		TopologysegmentDelOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "topologysegment_del",
@@ -52768,6 +53148,7 @@ func (c *Client) TopologysegmentDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysegmentDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -52867,7 +53248,7 @@ func (c *Client) TopologysegmentFind(
 	kwp := topologysegmentFindKwParams{
 		TopologysegmentFindArgs:         reqArgs,
 		TopologysegmentFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "topologysegment_find",
@@ -52878,6 +53259,7 @@ func (c *Client) TopologysegmentFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysegmentFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -53054,7 +53436,7 @@ func (c *Client) TopologysegmentMod(
 	kwp := topologysegmentModKwParams{
 		TopologysegmentModArgs:         reqArgs,
 		TopologysegmentModOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "topologysegment_mod",
@@ -53065,6 +53447,7 @@ func (c *Client) TopologysegmentMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysegmentModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -53226,7 +53609,7 @@ func (c *Client) TopologysegmentReinitialize(
 	kwp := topologysegmentReinitializeKwParams{
 		TopologysegmentReinitializeArgs:         reqArgs,
 		TopologysegmentReinitializeOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                                 apiVersion,
 	}
 	req := request{
 		Method: "topologysegment_reinitialize",
@@ -53237,6 +53620,7 @@ func (c *Client) TopologysegmentReinitialize(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysegmentReinitializeResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -53347,7 +53731,7 @@ func (c *Client) TopologysegmentShow(
 	kwp := topologysegmentShowKwParams{
 		TopologysegmentShowArgs:         reqArgs,
 		TopologysegmentShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "topologysegment_show",
@@ -53358,6 +53742,7 @@ func (c *Client) TopologysegmentShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysegmentShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -53468,7 +53853,7 @@ func (c *Client) TopologysuffixAdd(
 	kwp := topologysuffixAddKwParams{
 		TopologysuffixAddArgs:         reqArgs,
 		TopologysuffixAddOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "topologysuffix_add",
@@ -53479,6 +53864,7 @@ func (c *Client) TopologysuffixAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysuffixAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -53597,7 +53983,7 @@ func (c *Client) TopologysuffixDel(
 	kwp := topologysuffixDelKwParams{
 		TopologysuffixDelArgs:         reqArgs,
 		TopologysuffixDelOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "topologysuffix_del",
@@ -53608,6 +53994,7 @@ func (c *Client) TopologysuffixDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysuffixDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -53701,7 +54088,7 @@ func (c *Client) TopologysuffixFind(
 	kwp := topologysuffixFindKwParams{
 		TopologysuffixFindArgs:         reqArgs,
 		TopologysuffixFindOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "topologysuffix_find",
@@ -53712,6 +54099,7 @@ func (c *Client) TopologysuffixFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysuffixFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -53840,7 +54228,7 @@ func (c *Client) TopologysuffixMod(
 	kwp := topologysuffixModKwParams{
 		TopologysuffixModArgs:         reqArgs,
 		TopologysuffixModOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "topologysuffix_mod",
@@ -53851,6 +54239,7 @@ func (c *Client) TopologysuffixMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysuffixModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -53982,7 +54371,7 @@ func (c *Client) TopologysuffixShow(
 	kwp := topologysuffixShowKwParams{
 		TopologysuffixShowArgs:         reqArgs,
 		TopologysuffixShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "topologysuffix_show",
@@ -53993,6 +54382,7 @@ func (c *Client) TopologysuffixShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysuffixShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -54103,7 +54493,7 @@ func (c *Client) TopologysuffixVerify(
 	kwp := topologysuffixVerifyKwParams{
 		TopologysuffixVerifyArgs:         reqArgs,
 		TopologysuffixVerifyOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "topologysuffix_verify",
@@ -54114,6 +54504,7 @@ func (c *Client) TopologysuffixVerify(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res topologysuffixVerifyResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -54209,6 +54600,7 @@ func (c *Client) TrustAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -54392,6 +54784,7 @@ func (c *Client) TrustDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -54484,7 +54877,7 @@ func (c *Client) TrustFetchDomains(
 	kwp := trustFetchDomainsKwParams{
 		TrustFetchDomainsArgs:         reqArgs,
 		TrustFetchDomainsOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "trust_fetch_domains",
@@ -54495,6 +54888,7 @@ func (c *Client) TrustFetchDomains(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustFetchDomainsResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -54623,6 +55017,7 @@ func (c *Client) TrustFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -54783,6 +55178,7 @@ func (c *Client) TrustMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -54931,6 +55327,7 @@ func (c *Client) TrustResolve(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustResolveResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -55028,6 +55425,7 @@ func (c *Client) TrustShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -55143,6 +55541,7 @@ func (c *Client) TrustconfigMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustconfigModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -55285,6 +55684,7 @@ func (c *Client) TrustconfigShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustconfigShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -55400,6 +55800,7 @@ func (c *Client) TrustdomainAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustdomainAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -55547,6 +55948,7 @@ func (c *Client) TrustdomainDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustdomainDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -55645,7 +56047,7 @@ func (c *Client) TrustdomainDisable(
 	kwp := trustdomainDisableKwParams{
 		TrustdomainDisableArgs:         reqArgs,
 		TrustdomainDisableOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "trustdomain_disable",
@@ -55656,6 +56058,7 @@ func (c *Client) TrustdomainDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustdomainDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -55748,7 +56151,7 @@ func (c *Client) TrustdomainEnable(
 	kwp := trustdomainEnableKwParams{
 		TrustdomainEnableArgs:         reqArgs,
 		TrustdomainEnableOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "trustdomain_enable",
@@ -55759,6 +56162,7 @@ func (c *Client) TrustdomainEnable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustdomainEnableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -55863,6 +56267,7 @@ func (c *Client) TrustdomainFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustdomainFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -56014,6 +56419,7 @@ func (c *Client) TrustdomainMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res trustdomainModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -56174,6 +56580,7 @@ func (c *Client) UserAdd(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userAddResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -56537,6 +56944,7 @@ func (c *Client) UserAddCert(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userAddCertResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -56658,6 +57066,7 @@ func (c *Client) UserAddManager(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userAddManagerResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -56768,7 +57177,7 @@ func (c *Client) UserAddPrincipal(
 	kwp := userAddPrincipalKwParams{
 		UserAddPrincipalArgs:         reqArgs,
 		UserAddPrincipalOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "user_add_principal",
@@ -56779,6 +57188,7 @@ func (c *Client) UserAddPrincipal(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userAddPrincipalResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -56900,6 +57310,7 @@ func (c *Client) UserDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -57009,6 +57420,7 @@ func (c *Client) UserDisable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userDisableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -57106,6 +57518,7 @@ func (c *Client) UserEnable(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userEnableResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -57204,6 +57617,7 @@ func (c *Client) UserFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -57631,6 +58045,7 @@ func (c *Client) UserMod(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userModResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -58007,6 +58422,7 @@ func (c *Client) UserRemoveCert(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userRemoveCertResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -58117,7 +58533,7 @@ func (c *Client) UserRemoveManager(
 	kwp := userRemoveManagerKwParams{
 		UserRemoveManagerArgs:         reqArgs,
 		UserRemoveManagerOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "user_remove_manager",
@@ -58128,6 +58544,7 @@ func (c *Client) UserRemoveManager(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userRemoveManagerResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -58238,7 +58655,7 @@ func (c *Client) UserRemovePrincipal(
 	kwp := userRemovePrincipalKwParams{
 		UserRemovePrincipalArgs:         reqArgs,
 		UserRemovePrincipalOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                         apiVersion,
 	}
 	req := request{
 		Method: "user_remove_principal",
@@ -58249,6 +58666,7 @@ func (c *Client) UserRemovePrincipal(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userRemovePrincipalResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -58370,6 +58788,7 @@ func (c *Client) UserShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -58497,6 +58916,7 @@ func (c *Client) UserStage(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userStageResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -58619,6 +59039,7 @@ func (c *Client) UserStatus(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userStatusResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -58734,6 +59155,7 @@ func (c *Client) UserUndel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userUndelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -58836,6 +59258,7 @@ func (c *Client) UserUnlock(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res userUnlockResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -58922,7 +59345,7 @@ func (c *Client) VaultAddInternal(
 	kwp := vaultAddInternalKwParams{
 		VaultAddInternalArgs:         reqArgs,
 		VaultAddInternalOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "vault_add_internal",
@@ -58933,6 +59356,7 @@ func (c *Client) VaultAddInternal(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultAddInternalResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -59104,6 +59528,7 @@ func (c *Client) VaultAddMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultAddMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -59255,6 +59680,7 @@ func (c *Client) VaultAddOwner(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultAddOwnerResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -59395,7 +59821,7 @@ func (c *Client) VaultArchiveInternal(
 	kwp := vaultArchiveInternalKwParams{
 		VaultArchiveInternalArgs:         reqArgs,
 		VaultArchiveInternalOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                          apiVersion,
 	}
 	req := request{
 		Method: "vault_archive_internal",
@@ -59406,6 +59832,7 @@ func (c *Client) VaultArchiveInternal(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultArchiveInternalResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -59551,6 +59978,7 @@ func (c *Client) VaultDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -59673,6 +60101,7 @@ func (c *Client) VaultFind(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultFindResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -59843,7 +60272,7 @@ func (c *Client) VaultModInternal(
 	kwp := vaultModInternalKwParams{
 		VaultModInternalArgs:         reqArgs,
 		VaultModInternalOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "vault_mod_internal",
@@ -59854,6 +60283,7 @@ func (c *Client) VaultModInternal(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultModInternalResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -60027,7 +60457,7 @@ func (c *Client) VaultRemoveMember(
 	kwp := vaultRemoveMemberKwParams{
 		VaultRemoveMemberArgs:         reqArgs,
 		VaultRemoveMemberOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "vault_remove_member",
@@ -60038,6 +60468,7 @@ func (c *Client) VaultRemoveMember(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultRemoveMemberResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -60178,7 +60609,7 @@ func (c *Client) VaultRemoveOwner(
 	kwp := vaultRemoveOwnerKwParams{
 		VaultRemoveOwnerArgs:         reqArgs,
 		VaultRemoveOwnerOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                      apiVersion,
 	}
 	req := request{
 		Method: "vault_remove_owner",
@@ -60189,6 +60620,7 @@ func (c *Client) VaultRemoveOwner(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultRemoveOwnerResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -60329,7 +60761,7 @@ func (c *Client) VaultRetrieveInternal(
 	kwp := vaultRetrieveInternalKwParams{
 		VaultRetrieveInternalArgs:         reqArgs,
 		VaultRetrieveInternalOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                           apiVersion,
 	}
 	req := request{
 		Method: "vault_retrieve_internal",
@@ -60340,6 +60772,7 @@ func (c *Client) VaultRetrieveInternal(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultRetrieveInternalResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -60473,6 +60906,7 @@ func (c *Client) VaultShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -60612,6 +61046,7 @@ func (c *Client) VaultconfigShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultconfigShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -60710,7 +61145,7 @@ func (c *Client) VaultcontainerAddOwner(
 	kwp := vaultcontainerAddOwnerKwParams{
 		VaultcontainerAddOwnerArgs:         reqArgs,
 		VaultcontainerAddOwnerOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                            apiVersion,
 	}
 	req := request{
 		Method: "vaultcontainer_add_owner",
@@ -60721,6 +61156,7 @@ func (c *Client) VaultcontainerAddOwner(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultcontainerAddOwnerResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -60855,7 +61291,7 @@ func (c *Client) VaultcontainerDel(
 	kwp := vaultcontainerDelKwParams{
 		VaultcontainerDelArgs:         reqArgs,
 		VaultcontainerDelOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                       apiVersion,
 	}
 	req := request{
 		Method: "vaultcontainer_del",
@@ -60866,6 +61302,7 @@ func (c *Client) VaultcontainerDel(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultcontainerDelResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -60970,7 +61407,7 @@ func (c *Client) VaultcontainerRemoveOwner(
 	kwp := vaultcontainerRemoveOwnerKwParams{
 		VaultcontainerRemoveOwnerArgs:         reqArgs,
 		VaultcontainerRemoveOwnerOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                               apiVersion,
 	}
 	req := request{
 		Method: "vaultcontainer_remove_owner",
@@ -60981,6 +61418,7 @@ func (c *Client) VaultcontainerRemoveOwner(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultcontainerRemoveOwnerResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
@@ -61115,7 +61553,7 @@ func (c *Client) VaultcontainerShow(
 	kwp := vaultcontainerShowKwParams{
 		VaultcontainerShowArgs:         reqArgs,
 		VaultcontainerShowOptionalArgs: optArgs,
-		Version: apiVersion,
+		Version:                        apiVersion,
 	}
 	req := request{
 		Method: "vaultcontainer_show",
@@ -61126,6 +61564,7 @@ func (c *Client) VaultcontainerShow(
 	if e != nil {
 		return nil, e
 	}
+	defer readCloser.Close()
 	var res vaultcontainerShowResponse
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e

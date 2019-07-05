@@ -47,6 +47,7 @@ func (c *Client) {{.UpperName}}(
   if e != nil {
     return nil, e
   }
+  defer readCloser.Close()
   var res {{.LowerName}}Response
 	if e := json.NewDecoder(readCloser).Decode(&res); e != nil {
 		return nil, e
