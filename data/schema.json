@@ -2931,52 +2931,6 @@
               "type": "bytes"
             },
             {
-              "label": "Subject",
-              "name": "subject",
-              "type": "str"
-            },
-            {
-              "label": "Serial Number",
-              "name": "serial_number",
-              "type": "str"
-            },
-            {
-              "label": "Serial Number (hex)",
-              "name": "serial_number_hex",
-              "type": "str"
-            },
-            {
-              "label": "Issuer",
-              "name": "issuer",
-              "type": "str"
-            },
-            {
-              "label": "Not Before",
-              "name": "valid_not_before",
-              "type": "str"
-            },
-            {
-              "label": "Not After",
-              "name": "valid_not_after",
-              "type": "str"
-            },
-            {
-              "label": "Fingerprint (MD5)",
-              "name": "md5_fingerprint",
-              "type": "str"
-            },
-            {
-              "label": "Fingerprint (SHA1)",
-              "name": "sha1_fingerprint",
-              "type": "str"
-            },
-            {
-              "label": "Revocation reason",
-              "name": "revocation_reason",
-              "required": false,
-              "type": "str"
-            },
-            {
               "label": "Principal name",
               "name": "krbcanonicalname",
               "required": false,
@@ -3130,51 +3084,6 @@
             {
               "label": "Managed by",
               "name": "managedby_host",
-              "type": "str"
-            },
-            {
-              "label": "Managing",
-              "name": "managing_host",
-              "type": "str"
-            },
-            {
-              "label": "Users allowed to retrieve keytab",
-              "name": "ipaallowedtoperform_read_keys_user",
-              "type": "str"
-            },
-            {
-              "label": "Groups allowed to retrieve keytab",
-              "name": "ipaallowedtoperform_read_keys_group",
-              "type": "str"
-            },
-            {
-              "label": "Hosts allowed to retrieve keytab",
-              "name": "ipaallowedtoperform_read_keys_host",
-              "type": "str"
-            },
-            {
-              "label": "Host Groups allowed to retrieve keytab",
-              "name": "ipaallowedtoperform_read_keys_hostgroup",
-              "type": "str"
-            },
-            {
-              "label": "Users allowed to create keytab",
-              "name": "ipaallowedtoperform_write_keys_user",
-              "type": "str"
-            },
-            {
-              "label": "Groups allowed to create keytab",
-              "name": "ipaallowedtoperform_write_keys_group",
-              "type": "str"
-            },
-            {
-              "label": "Hosts allowed to create keytab",
-              "name": "ipaallowedtoperform_write_keys_host",
-              "type": "str"
-            },
-            {
-              "label": "Host Groups allowed to create keytab",
-              "name": "ipaallowedtoperform_write_keys_hostgroup",
               "type": "str"
             }
           ],
