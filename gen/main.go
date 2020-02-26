@@ -113,6 +113,38 @@ func loadSchema() (*Schema, error) {
 				}
 			}
 
+			// HACK FreeIPA host has several fields which are not required.
+			hostNotRequiredParams := []string{
+				"subject",
+				"serial_number",
+				"serial_number_hex",
+				"issuer",
+				"valid_not_before",
+				"valid_not_after",
+				"md5_fingerprint",
+				"sha1_fingerprint",
+				"sha256_fingerprint",
+				"managing_host",
+				"ipaallowedtoperform_read_keys_user",
+				"ipaallowedtoperform_read_keys_group",
+				"ipaallowedtoperform_read_keys_host",
+				"ipaallowedtoperform_read_keys_hostgroup",
+				"ipaallowedtoperform_write_keys_user",
+				"ipaallowedtoperform_write_keys_group",
+				"ipaallowedtoperform_write_keys_host",
+				"ipaallowedtoperform_write_keys_hostgroup",
+			}
+			if c.Name == "host" {
+				for _, p := range c.Params {
+					for _, pp := range hostNotRequiredParams {
+						if p.Name == pp {
+							v := false
+							p.RequiredRaw = &v
+						}
+					}
+				}
+			}
+
 			// HACK FreeIPA sometimes doesn't supply boolean fields which are
 			// marked required in schema. This workaround makes them optional.
 			for _, p := range c.Params {
