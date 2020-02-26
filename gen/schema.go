@@ -21,10 +21,6 @@ type Topic struct {
 	FullName string `json:"full_name"`
 	Doc      string `json:"doc"`
 	Version  string `json:"version"`
-
-	TopicTopic struct {
-		Base64 string `json:"__base64__"`
-	} `json:"topic_topic"`
 }
 
 type Class struct {
