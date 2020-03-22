@@ -49,6 +49,10 @@ func toGoType(ipaType string) string {
 		return "string"
 	case "Decimal":
 		return "float64"
+	case "Certificate":
+		return "interface{}"
+	case "CertificateSigningRequest":
+		return "string"
 	default:
 		return ipaType
 	}
