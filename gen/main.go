@@ -163,6 +163,22 @@ func loadSchema() (*Schema, error) {
 				}
 			}
 
+			// Add Dn to all types
+			hasDn := false
+			for _, p := range c.Params {
+				if p.Name == "dn" {
+					hasDn = true
+					break
+				}
+			}
+			if !hasDn {
+				dn := Param{
+					Name: "dn",
+					Type: "string",
+				}
+				c.Params = append(c.Params, &dn)
+			}
+
 			classes = append(classes, c)
 		}
 	}
