@@ -9238,7 +9238,7 @@ Rule used to check if a certificate can be used for authentication
 Domain name
 Domain where the user entry will be searched
     */
-    Associateddomain *[]string `json:"associateddomain,omitempty"`
+    Associateddomain *[]interface{} `json:"associateddomain,omitempty"`
   
     /*
 Priority
@@ -9703,7 +9703,7 @@ Rule used to check if a certificate can be used for authentication
 Domain name
 Domain where the user entry will be searched
     */
-    Associateddomain *[]string `json:"associateddomain,omitempty"`
+    Associateddomain *[]interface{} `json:"associateddomain,omitempty"`
   
     /*
 Priority
@@ -9874,7 +9874,7 @@ Rule used to check if a certificate can be used for authentication
 Domain name
 Domain where the user entry will be searched
     */
-    Associateddomain *[]string `json:"associateddomain,omitempty"`
+    Associateddomain *[]interface{} `json:"associateddomain,omitempty"`
   
     /*
 Priority
@@ -13553,7 +13553,7 @@ type DnsforwardzoneAddOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   
     /*
 Reverse zone IP network
@@ -13641,7 +13641,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsforwardzoneAddResult) String() string {
@@ -13702,7 +13702,7 @@ type DnsforwardzoneAddPermissionOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   }
 
 type dnsforwardzoneAddPermissionKwParams struct {
@@ -13801,7 +13801,7 @@ type DnsforwardzoneDelOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *[]string `json:"idnsname,omitempty"`
+    Idnsname *[]interface{} `json:"idnsname,omitempty"`
   
     /*
 
@@ -13845,7 +13845,7 @@ List of deletions that failed
 
     (required)
     */
-    Value []string `json:"value,omitempty"`
+    Value []interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsforwardzoneDelResult) String() string {
@@ -13906,7 +13906,7 @@ type DnsforwardzoneDisableOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   }
 
 type dnsforwardzoneDisableKwParams struct {
@@ -13944,7 +13944,7 @@ True means the operation was successful
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsforwardzoneDisableResult) String() string {
@@ -14005,7 +14005,7 @@ type DnsforwardzoneEnableOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   }
 
 type dnsforwardzoneEnableKwParams struct {
@@ -14043,7 +14043,7 @@ True means the operation was successful
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsforwardzoneEnableResult) String() string {
@@ -14105,7 +14105,7 @@ type DnsforwardzoneFindOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   
     /*
 Reverse zone IP network
@@ -14264,7 +14264,7 @@ type DnsforwardzoneModOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   
     /*
 Reverse zone IP network
@@ -14359,7 +14359,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsforwardzoneModResult) String() string {
@@ -14420,7 +14420,7 @@ type DnsforwardzoneRemovePermissionOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   }
 
 type dnsforwardzoneRemovePermissionKwParams struct {
@@ -14519,7 +14519,7 @@ type DnsforwardzoneShowOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   
     /*
 Rights
@@ -14575,7 +14575,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsforwardzoneShowResult) String() string {
@@ -14633,7 +14633,7 @@ type DnsrecordAddArgs struct {
 Record name
 Record name
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   }
 
 type DnsrecordAddOptionalArgs struct {
@@ -14642,7 +14642,7 @@ type DnsrecordAddOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Dnszoneidnsname *string `json:"dnszoneidnsname,omitempty"`
+    Dnszoneidnsname *interface{} `json:"dnszoneidnsname,omitempty"`
   
     /*
 Time to live
@@ -14720,7 +14720,7 @@ AFSDB Subtype
 AFSDB Hostname
 
     */
-    AfsdbPartHostname *string `json:"afsdb_part_hostname,omitempty"`
+    AfsdbPartHostname *interface{} `json:"afsdb_part_hostname,omitempty"`
   
     /*
 APL record
@@ -14768,7 +14768,7 @@ Raw CNAME records
 CNAME Hostname
 A hostname which this alias hostname points to
     */
-    CnamePartHostname *string `json:"cname_part_hostname,omitempty"`
+    CnamePartHostname *interface{} `json:"cname_part_hostname,omitempty"`
   
     /*
 DHCID record
@@ -14816,7 +14816,7 @@ Raw DNAME records
 DNAME Target
 
     */
-    DnamePartTarget *string `json:"dname_part_target,omitempty"`
+    DnamePartTarget *interface{} `json:"dname_part_target,omitempty"`
   
     /*
 DS record
@@ -14882,7 +14882,7 @@ Preference given to this exchanger. Lower values are more preferred
 KX Exchanger
 A host willing to act as a key exchanger
     */
-    KxPartExchanger *string `json:"kx_part_exchanger,omitempty"`
+    KxPartExchanger *interface{} `json:"kx_part_exchanger,omitempty"`
   
     /*
 LOC record
@@ -14978,7 +14978,7 @@ Preference given to this exchanger. Lower values are more preferred
 MX Exchanger
 A host willing to act as a mail exchanger
     */
-    MxPartExchanger *string `json:"mx_part_exchanger,omitempty"`
+    MxPartExchanger *interface{} `json:"mx_part_exchanger,omitempty"`
   
     /*
 NAPTR record
@@ -15032,7 +15032,7 @@ Raw NS records
 NS Hostname
 
     */
-    NsPartHostname *string `json:"ns_part_hostname,omitempty"`
+    NsPartHostname *interface{} `json:"ns_part_hostname,omitempty"`
   
     /*
 NSEC record
@@ -15050,7 +15050,7 @@ Raw PTR records
 PTR Hostname
 The hostname this reverse record points to
     */
-    PtrPartHostname *string `json:"ptr_part_hostname,omitempty"`
+    PtrPartHostname *interface{} `json:"ptr_part_hostname,omitempty"`
   
     /*
 RRSIG record
@@ -15104,7 +15104,7 @@ SRV Port
 SRV Target
 The domain name of the target host or '.' if the service is decidedly not available at this domain
     */
-    SrvPartTarget *string `json:"srv_part_target,omitempty"`
+    SrvPartTarget *interface{} `json:"srv_part_target,omitempty"`
   
     /*
 SSHFP record
@@ -15270,7 +15270,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsrecordAddResult) String() string {
@@ -15328,7 +15328,7 @@ type DnsrecordDelArgs struct {
 Record name
 Record name
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   }
 
 type DnsrecordDelOptionalArgs struct {
@@ -15337,7 +15337,7 @@ type DnsrecordDelOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Dnszoneidnsname *string `json:"dnszoneidnsname,omitempty"`
+    Dnszoneidnsname *interface{} `json:"dnszoneidnsname,omitempty"`
   
     /*
 Time to live
@@ -15585,7 +15585,7 @@ List of deletions that failed
 
     (required)
     */
-    Value []string `json:"value,omitempty"`
+    Value []interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsrecordDelResult) String() string {
@@ -15643,7 +15643,7 @@ type DnsrecordDelentryArgs struct {
 Record name
 Record name
     */
-    Idnsname []string `json:"idnsname,omitempty"`
+    Idnsname []interface{} `json:"idnsname,omitempty"`
   }
 
 type DnsrecordDelentryOptionalArgs struct {
@@ -15652,7 +15652,7 @@ type DnsrecordDelentryOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Dnszoneidnsname *string `json:"dnszoneidnsname,omitempty"`
+    Dnszoneidnsname *interface{} `json:"dnszoneidnsname,omitempty"`
   
     /*
 
@@ -15696,7 +15696,7 @@ List of deletions that failed
 
     (required)
     */
-    Value []string `json:"value,omitempty"`
+    Value []interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsrecordDelentryResult) String() string {
@@ -15758,13 +15758,13 @@ type DnsrecordFindOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Dnszoneidnsname *string `json:"dnszoneidnsname,omitempty"`
+    Dnszoneidnsname *interface{} `json:"dnszoneidnsname,omitempty"`
   
     /*
 Record name
 Record name
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   
     /*
 Time to live
@@ -16094,7 +16094,7 @@ type DnsrecordModArgs struct {
 Record name
 Record name
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   }
 
 type DnsrecordModOptionalArgs struct {
@@ -16103,7 +16103,7 @@ type DnsrecordModOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Dnszoneidnsname *string `json:"dnszoneidnsname,omitempty"`
+    Dnszoneidnsname *interface{} `json:"dnszoneidnsname,omitempty"`
   
     /*
 Time to live
@@ -16169,7 +16169,7 @@ AFSDB Subtype
 AFSDB Hostname
 
     */
-    AfsdbPartHostname *string `json:"afsdb_part_hostname,omitempty"`
+    AfsdbPartHostname *interface{} `json:"afsdb_part_hostname,omitempty"`
   
     /*
 APL record
@@ -16217,7 +16217,7 @@ Raw CNAME records
 CNAME Hostname
 A hostname which this alias hostname points to
     */
-    CnamePartHostname *string `json:"cname_part_hostname,omitempty"`
+    CnamePartHostname *interface{} `json:"cname_part_hostname,omitempty"`
   
     /*
 DHCID record
@@ -16265,7 +16265,7 @@ Raw DNAME records
 DNAME Target
 
     */
-    DnamePartTarget *string `json:"dname_part_target,omitempty"`
+    DnamePartTarget *interface{} `json:"dname_part_target,omitempty"`
   
     /*
 DS record
@@ -16331,7 +16331,7 @@ Preference given to this exchanger. Lower values are more preferred
 KX Exchanger
 A host willing to act as a key exchanger
     */
-    KxPartExchanger *string `json:"kx_part_exchanger,omitempty"`
+    KxPartExchanger *interface{} `json:"kx_part_exchanger,omitempty"`
   
     /*
 LOC record
@@ -16427,7 +16427,7 @@ Preference given to this exchanger. Lower values are more preferred
 MX Exchanger
 A host willing to act as a mail exchanger
     */
-    MxPartExchanger *string `json:"mx_part_exchanger,omitempty"`
+    MxPartExchanger *interface{} `json:"mx_part_exchanger,omitempty"`
   
     /*
 NAPTR record
@@ -16481,7 +16481,7 @@ Raw NS records
 NS Hostname
 
     */
-    NsPartHostname *string `json:"ns_part_hostname,omitempty"`
+    NsPartHostname *interface{} `json:"ns_part_hostname,omitempty"`
   
     /*
 NSEC record
@@ -16499,7 +16499,7 @@ Raw PTR records
 PTR Hostname
 The hostname this reverse record points to
     */
-    PtrPartHostname *string `json:"ptr_part_hostname,omitempty"`
+    PtrPartHostname *interface{} `json:"ptr_part_hostname,omitempty"`
   
     /*
 RRSIG record
@@ -16553,7 +16553,7 @@ SRV Port
 SRV Target
 The domain name of the target host or '.' if the service is decidedly not available at this domain
     */
-    SrvPartTarget *string `json:"srv_part_target,omitempty"`
+    SrvPartTarget *interface{} `json:"srv_part_target,omitempty"`
   
     /*
 SSHFP record
@@ -16694,7 +16694,7 @@ Print entries as stored on the server. Only affects output format.
 Rename
 Rename the DNS resource record object
     */
-    Rename *string `json:"rename,omitempty"`
+    Rename *interface{} `json:"rename,omitempty"`
   }
 
 type dnsrecordModKwParams struct {
@@ -16732,7 +16732,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsrecordModResult) String() string {
@@ -16790,7 +16790,7 @@ type DnsrecordShowArgs struct {
 Record name
 Record name
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   }
 
 type DnsrecordShowOptionalArgs struct {
@@ -16799,7 +16799,7 @@ type DnsrecordShowOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Dnszoneidnsname *string `json:"dnszoneidnsname,omitempty"`
+    Dnszoneidnsname *interface{} `json:"dnszoneidnsname,omitempty"`
   
     /*
 Rights
@@ -16861,7 +16861,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnsrecordShowResult) String() string {
@@ -17022,7 +17022,7 @@ DNS Server name
 SOA mname override
 SOA mname (authoritative server) override
     */
-    Idnssoamname *string `json:"idnssoamname,omitempty"`
+    Idnssoamname *interface{} `json:"idnssoamname,omitempty"`
   
     /*
 Forwarders
@@ -17175,7 +17175,7 @@ type DnsserverModOptionalArgs struct {
 SOA mname override
 SOA mname (authoritative server) override
     */
-    Idnssoamname *string `json:"idnssoamname,omitempty"`
+    Idnssoamname *interface{} `json:"idnssoamname,omitempty"`
   
     /*
 Forwarders
@@ -17448,7 +17448,7 @@ type DnszoneAddOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   
     /*
 Reverse zone IP network
@@ -17472,13 +17472,13 @@ Per-zone conditional forwarding policy. Set to "none" to disable forwarding to g
 Authoritative nameserver
 Authoritative nameserver domain name
     */
-    Idnssoamname *string `json:"idnssoamname,omitempty"`
+    Idnssoamname *interface{} `json:"idnssoamname,omitempty"`
   
     /*
 Administrator e-mail address
 Administrator e-mail address
     */
-    Idnssoarname *string `json:"idnssoarname,omitempty"`
+    Idnssoarname *interface{} `json:"idnssoarname,omitempty"`
   
     /*
 SOA refresh
@@ -17650,7 +17650,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnszoneAddResult) String() string {
@@ -17711,7 +17711,7 @@ type DnszoneAddPermissionOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   }
 
 type dnszoneAddPermissionKwParams struct {
@@ -17810,7 +17810,7 @@ type DnszoneDelOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *[]string `json:"idnsname,omitempty"`
+    Idnsname *[]interface{} `json:"idnsname,omitempty"`
   
     /*
 
@@ -17854,7 +17854,7 @@ List of deletions that failed
 
     (required)
     */
-    Value []string `json:"value,omitempty"`
+    Value []interface{} `json:"value,omitempty"`
   }
 
 func (t *DnszoneDelResult) String() string {
@@ -17915,7 +17915,7 @@ type DnszoneDisableOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   }
 
 type dnszoneDisableKwParams struct {
@@ -17953,7 +17953,7 @@ True means the operation was successful
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnszoneDisableResult) String() string {
@@ -18014,7 +18014,7 @@ type DnszoneEnableOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   }
 
 type dnszoneEnableKwParams struct {
@@ -18052,7 +18052,7 @@ True means the operation was successful
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnszoneEnableResult) String() string {
@@ -18114,7 +18114,7 @@ type DnszoneFindOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   
     /*
 Reverse zone IP network
@@ -18144,13 +18144,13 @@ Per-zone conditional forwarding policy. Set to "none" to disable forwarding to g
 Authoritative nameserver
 Authoritative nameserver domain name
     */
-    Idnssoamname *string `json:"idnssoamname,omitempty"`
+    Idnssoamname *interface{} `json:"idnssoamname,omitempty"`
   
     /*
 Administrator e-mail address
 Administrator e-mail address
     */
-    Idnssoarname *string `json:"idnssoarname,omitempty"`
+    Idnssoarname *interface{} `json:"idnssoarname,omitempty"`
   
     /*
 SOA serial
@@ -18381,7 +18381,7 @@ type DnszoneModOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   
     /*
 Reverse zone IP network
@@ -18405,13 +18405,13 @@ Per-zone conditional forwarding policy. Set to "none" to disable forwarding to g
 Authoritative nameserver
 Authoritative nameserver domain name
     */
-    Idnssoamname *string `json:"idnssoamname,omitempty"`
+    Idnssoamname *interface{} `json:"idnssoamname,omitempty"`
   
     /*
 Administrator e-mail address
 Administrator e-mail address
     */
-    Idnssoarname *string `json:"idnssoarname,omitempty"`
+    Idnssoarname *interface{} `json:"idnssoarname,omitempty"`
   
     /*
 SOA serial
@@ -18584,7 +18584,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnszoneModResult) String() string {
@@ -18645,7 +18645,7 @@ type DnszoneRemovePermissionOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   }
 
 type dnszoneRemovePermissionKwParams struct {
@@ -18744,7 +18744,7 @@ type DnszoneShowOptionalArgs struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   
     /*
 Rights
@@ -18800,7 +18800,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *DnszoneShowResult) String() string {
@@ -31683,7 +31683,7 @@ type LocationAddArgs struct {
 Location name
 IPA location name
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   }
 
 type LocationAddOptionalArgs struct {
@@ -31756,7 +31756,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *LocationAddResult) String() string {
@@ -31814,7 +31814,7 @@ type LocationDelArgs struct {
 Location name
 IPA location name
     */
-    Idnsname []string `json:"idnsname,omitempty"`
+    Idnsname []interface{} `json:"idnsname,omitempty"`
   }
 
 type LocationDelOptionalArgs struct {
@@ -31861,7 +31861,7 @@ List of deletions that failed
 
     (required)
     */
-    Value []string `json:"value,omitempty"`
+    Value []interface{} `json:"value,omitempty"`
   }
 
 func (t *LocationDelResult) String() string {
@@ -31923,7 +31923,7 @@ type LocationFindOptionalArgs struct {
 Location name
 IPA location name
     */
-    Idnsname *string `json:"idnsname,omitempty"`
+    Idnsname *interface{} `json:"idnsname,omitempty"`
   
     /*
 Description
@@ -32061,7 +32061,7 @@ type LocationModArgs struct {
 Location name
 IPA location name
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   }
 
 type LocationModOptionalArgs struct {
@@ -32147,7 +32147,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   }
 
 func (t *LocationModResult) String() string {
@@ -32205,7 +32205,7 @@ type LocationShowArgs struct {
 Location name
 IPA location name
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   }
 
 type LocationShowOptionalArgs struct {
@@ -32264,7 +32264,7 @@ User-friendly description of action performed
 The primary_key value of the entry, e.g. 'jdoe' for a user
     (required)
     */
-    Value string `json:"value,omitempty"`
+    Value interface{} `json:"value,omitempty"`
   
     /*
 Servers in location
@@ -43907,13 +43907,13 @@ Search for servers without these managed suffixes.
 location
 Search for servers with these ipa locations.
     */
-    InLocation *[]string `json:"in_location,omitempty"`
+    InLocation *[]interface{} `json:"in_location,omitempty"`
   
     /*
 location
 Search for servers without these ipa locations.
     */
-    NotInLocation *[]string `json:"not_in_location,omitempty"`
+    NotInLocation *[]interface{} `json:"not_in_location,omitempty"`
   
     /*
 role
@@ -44030,7 +44030,7 @@ type ServerModOptionalArgs struct {
 Location
 Server location
     */
-    IpalocationLocation *string `json:"ipalocation_location,omitempty"`
+    IpalocationLocation *interface{} `json:"ipalocation_location,omitempty"`
   
     /*
 Service weight
@@ -67522,7 +67522,7 @@ Subject email address
 Subject DNS name
 
     */
-    SanDnsname *[]string `json:"san_dnsname,omitempty"`
+    SanDnsname *[]interface{} `json:"san_dnsname,omitempty"`
   
     /*
 Subject X.400 address
@@ -67908,14 +67908,14 @@ func (out *Cert) UnmarshalJSON(data []byte) error {
   
   if in.SanDnsname != nil {
     raw := in.SanDnsname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -67928,7 +67928,7 @@ func (out *Cert) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.SanDnsname = &[]string{plainV}
+        out.SanDnsname = &[]interface{}{plainV}
       } else if sliceOk {
         
         out.SanDnsname = &sliceV
@@ -68699,7 +68699,7 @@ type Certmap struct {
 Domain
 
     */
-    Domain string `json:"domain,omitempty"`
+    Domain interface{} `json:"domain,omitempty"`
   
     /*
 User logins
@@ -68734,14 +68734,14 @@ func (out *Certmap) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Domain
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -68902,7 +68902,7 @@ Rule used to check if a certificate can be used for authentication
 Domain name
 Domain where the user entry will be searched
     */
-    Associateddomain *[]string `json:"associateddomain,omitempty"`
+    Associateddomain *[]interface{} `json:"associateddomain,omitempty"`
   
     /*
 Priority
@@ -69100,14 +69100,14 @@ func (out *Certmaprule) UnmarshalJSON(data []byte) error {
   
   if in.Associateddomain != nil {
     raw := in.Associateddomain
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -69120,7 +69120,7 @@ func (out *Certmaprule) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.Associateddomain = &[]string{plainV}
+        out.Associateddomain = &[]interface{}{plainV}
       } else if sliceOk {
         
         out.Associateddomain = &sliceV
@@ -69448,7 +69448,7 @@ Subject email address
 Subject DNS name
 
     */
-    SanDnsname *[]string `json:"san_dnsname,omitempty"`
+    SanDnsname *[]interface{} `json:"san_dnsname,omitempty"`
   
     /*
 Subject X.400 address
@@ -69818,14 +69818,14 @@ func (out *Certreq) UnmarshalJSON(data []byte) error {
   
   if in.SanDnsname != nil {
     raw := in.SanDnsname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -69838,7 +69838,7 @@ func (out *Certreq) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.SanDnsname = &[]string{plainV}
+        out.SanDnsname = &[]interface{}{plainV}
       } else if sliceOk {
         
         out.SanDnsname = &sliceV
@@ -73471,7 +73471,7 @@ Subtype
 Hostname
 
     */
-    Hostname string `json:"hostname,omitempty"`
+    Hostname interface{} `json:"hostname,omitempty"`
   }
 
 func (t *Dnsafsdbrecord) String() string {
@@ -73541,14 +73541,14 @@ func (out *Dnsafsdbrecord) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Hostname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -73890,7 +73890,7 @@ type Dnscnamerecord struct {
 Hostname
 A hostname which this alias hostname points to
     */
-    Hostname string `json:"hostname,omitempty"`
+    Hostname interface{} `json:"hostname,omitempty"`
   }
 
 func (t *Dnscnamerecord) String() string {
@@ -73917,14 +73917,14 @@ func (out *Dnscnamerecord) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Hostname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -74535,7 +74535,7 @@ type Dnsdnamerecord struct {
 Target
 
     */
-    Target string `json:"target,omitempty"`
+    Target interface{} `json:"target,omitempty"`
   }
 
 func (t *Dnsdnamerecord) String() string {
@@ -74562,14 +74562,14 @@ func (out *Dnsdnamerecord) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Target
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -74817,7 +74817,7 @@ type Dnsforwardzone struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   
     /*
 Reverse zone IP network
@@ -74884,14 +74884,14 @@ func (out *Dnsforwardzone) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Idnsname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -75186,7 +75186,7 @@ Preference given to this exchanger. Lower values are more preferred
 Exchanger
 A host willing to act as a key exchanger
     */
-    Exchanger string `json:"exchanger,omitempty"`
+    Exchanger interface{} `json:"exchanger,omitempty"`
   }
 
 func (t *Dnskxrecord) String() string {
@@ -75255,14 +75255,14 @@ func (out *Dnskxrecord) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Exchanger
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -75879,7 +75879,7 @@ Preference given to this exchanger. Lower values are more preferred
 Exchanger
 A host willing to act as a mail exchanger
     */
-    Exchanger string `json:"exchanger,omitempty"`
+    Exchanger interface{} `json:"exchanger,omitempty"`
   }
 
 func (t *Dnsmxrecord) String() string {
@@ -75948,14 +75948,14 @@ func (out *Dnsmxrecord) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Exchanger
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -76312,7 +76312,7 @@ type Dnsnsrecord struct {
 Hostname
 
     */
-    Hostname string `json:"hostname,omitempty"`
+    Hostname interface{} `json:"hostname,omitempty"`
   }
 
 func (t *Dnsnsrecord) String() string {
@@ -76339,14 +76339,14 @@ func (out *Dnsnsrecord) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Hostname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -76381,7 +76381,7 @@ type Dnsptrrecord struct {
 Hostname
 The hostname this reverse record points to
     */
-    Hostname string `json:"hostname,omitempty"`
+    Hostname interface{} `json:"hostname,omitempty"`
   }
 
 func (t *Dnsptrrecord) String() string {
@@ -76408,14 +76408,14 @@ func (out *Dnsptrrecord) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Hostname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -76450,7 +76450,7 @@ type Dnsrecord struct {
 Record name
 Record name
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   
     /*
 Time to live
@@ -76546,7 +76546,7 @@ AFSDB Subtype
 AFSDB Hostname
 
     */
-    AfsdbPartHostname *string `json:"afsdb_part_hostname,omitempty"`
+    AfsdbPartHostname *interface{} `json:"afsdb_part_hostname,omitempty"`
   
     /*
 APL record
@@ -76594,7 +76594,7 @@ Raw CNAME records
 CNAME Hostname
 A hostname which this alias hostname points to
     */
-    CnamePartHostname *string `json:"cname_part_hostname,omitempty"`
+    CnamePartHostname *interface{} `json:"cname_part_hostname,omitempty"`
   
     /*
 DHCID record
@@ -76642,7 +76642,7 @@ Raw DNAME records
 DNAME Target
 
     */
-    DnamePartTarget *string `json:"dname_part_target,omitempty"`
+    DnamePartTarget *interface{} `json:"dname_part_target,omitempty"`
   
     /*
 DS record
@@ -76708,7 +76708,7 @@ Preference given to this exchanger. Lower values are more preferred
 KX Exchanger
 A host willing to act as a key exchanger
     */
-    KxPartExchanger *string `json:"kx_part_exchanger,omitempty"`
+    KxPartExchanger *interface{} `json:"kx_part_exchanger,omitempty"`
   
     /*
 LOC record
@@ -76804,7 +76804,7 @@ Preference given to this exchanger. Lower values are more preferred
 MX Exchanger
 A host willing to act as a mail exchanger
     */
-    MxPartExchanger *string `json:"mx_part_exchanger,omitempty"`
+    MxPartExchanger *interface{} `json:"mx_part_exchanger,omitempty"`
   
     /*
 NAPTR record
@@ -76858,7 +76858,7 @@ Raw NS records
 NS Hostname
 
     */
-    NsPartHostname *string `json:"ns_part_hostname,omitempty"`
+    NsPartHostname *interface{} `json:"ns_part_hostname,omitempty"`
   
     /*
 NSEC record
@@ -76876,7 +76876,7 @@ Raw PTR records
 PTR Hostname
 The hostname this reverse record points to
     */
-    PtrPartHostname *string `json:"ptr_part_hostname,omitempty"`
+    PtrPartHostname *interface{} `json:"ptr_part_hostname,omitempty"`
   
     /*
 RRSIG record
@@ -76930,7 +76930,7 @@ SRV Port
 SRV Target
 The domain name of the target host or '.' if the service is decidedly not available at this domain
     */
-    SrvPartTarget *string `json:"srv_part_target,omitempty"`
+    SrvPartTarget *interface{} `json:"srv_part_target,omitempty"`
   
     /*
 SSHFP record
@@ -77237,14 +77237,14 @@ func (out *Dnsrecord) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Idnsname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -77816,14 +77816,14 @@ func (out *Dnsrecord) UnmarshalJSON(data []byte) error {
   
   if in.AfsdbPartHostname != nil {
     raw := in.AfsdbPartHostname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -78109,14 +78109,14 @@ func (out *Dnsrecord) UnmarshalJSON(data []byte) error {
   
   if in.CnamePartHostname != nil {
     raw := in.CnamePartHostname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -78402,14 +78402,14 @@ func (out *Dnsrecord) UnmarshalJSON(data []byte) error {
   
   if in.DnamePartTarget != nil {
     raw := in.DnamePartTarget
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -78800,14 +78800,14 @@ func (out *Dnsrecord) UnmarshalJSON(data []byte) error {
   
   if in.KxPartExchanger != nil {
     raw := in.KxPartExchanger
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -79402,14 +79402,14 @@ func (out *Dnsrecord) UnmarshalJSON(data []byte) error {
   
   if in.MxPartExchanger != nil {
     raw := in.MxPartExchanger
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -79733,14 +79733,14 @@ func (out *Dnsrecord) UnmarshalJSON(data []byte) error {
   
   if in.NsPartHostname != nil {
     raw := in.NsPartHostname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -79834,14 +79834,14 @@ func (out *Dnsrecord) UnmarshalJSON(data []byte) error {
   
   if in.PtrPartHostname != nil {
     raw := in.PtrPartHostname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -80154,14 +80154,14 @@ func (out *Dnsrecord) UnmarshalJSON(data []byte) error {
   
   if in.SrvPartTarget != nil {
     raw := in.SrvPartTarget
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -80816,7 +80816,7 @@ DNS Server name
 SOA mname override
 SOA mname (authoritative server) override
     */
-    Idnssoamname *string `json:"idnssoamname,omitempty"`
+    Idnssoamname *interface{} `json:"idnssoamname,omitempty"`
   
     /*
 Forwarders
@@ -80897,14 +80897,14 @@ func (out *Dnsserver) UnmarshalJSON(data []byte) error {
   
   if in.Idnssoamname != nil {
     raw := in.Idnssoamname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -81077,7 +81077,7 @@ Port
 Target
 The domain name of the target host or '.' if the service is decidedly not available at this domain
     */
-    Target string `json:"target,omitempty"`
+    Target interface{} `json:"target,omitempty"`
   }
 
 func (t *Dnssrvrecord) String() string {
@@ -81230,14 +81230,14 @@ func (out *Dnssrvrecord) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Target
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -81884,7 +81884,7 @@ type Dnszone struct {
 Zone name
 Zone name (FQDN)
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   
     /*
 Reverse zone IP network
@@ -81920,13 +81920,13 @@ Managedby permission
 Authoritative nameserver
 Authoritative nameserver domain name
     */
-    Idnssoamname *string `json:"idnssoamname,omitempty"`
+    Idnssoamname *interface{} `json:"idnssoamname,omitempty"`
   
     /*
 Administrator e-mail address
 Administrator e-mail address
     */
-    Idnssoarname string `json:"idnssoarname,omitempty"`
+    Idnssoarname interface{} `json:"idnssoarname,omitempty"`
   
     /*
 SOA serial
@@ -82087,14 +82087,14 @@ func (out *Dnszone) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Idnsname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -82302,14 +82302,14 @@ func (out *Dnszone) UnmarshalJSON(data []byte) error {
   
   if in.Idnssoamname != nil {
     raw := in.Idnssoamname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -82339,14 +82339,14 @@ func (out *Dnszone) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Idnssoarname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -89312,7 +89312,7 @@ type Location struct {
 Location name
 IPA location name
     */
-    Idnsname string `json:"idnsname,omitempty"`
+    Idnsname interface{} `json:"idnsname,omitempty"`
   
     /*
 Description
@@ -89363,14 +89363,14 @@ func (out *Location) UnmarshalJSON(data []byte) error {
   
   if true {
     raw := in.Idnsname
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
@@ -96140,7 +96140,7 @@ Maximum domain level
 Location
 Server location
     */
-    IpalocationLocation *string `json:"ipalocation_location,omitempty"`
+    IpalocationLocation *interface{} `json:"ipalocation_location,omitempty"`
   
     /*
 Service weight
@@ -96381,14 +96381,14 @@ func (out *Server) UnmarshalJSON(data []byte) error {
   
   if in.IpalocationLocation != nil {
     raw := in.IpalocationLocation
-    plainV, plainOk := raw.(string)
+    plainV, plainOk := raw.(interface{})
     sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-    var sliceV []string
+    var sliceV []interface{}
     sliceOk := sliceWrapperOk
     if sliceWrapperOk {
       for _, rawItem := range sliceWrapperV {
         
-        itemV, itemOk := rawItem.(string)
+        itemV, itemOk := rawItem.(interface{})
         
         if !itemOk {
           sliceOk = false
