@@ -125,6 +125,7 @@ func loadSchema() (*Schema, error) {
 				"sha1_fingerprint",
 				"sha256_fingerprint",
 				"managing_host",
+				"managedby_host",
 				"ipaallowedtoperform_read_keys_user",
 				"ipaallowedtoperform_read_keys_group",
 				"ipaallowedtoperform_read_keys_host",
