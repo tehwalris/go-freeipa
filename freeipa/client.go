@@ -34,6 +34,8 @@ import (
 	"net/http"
 	"net/http/cookiejar"
 	"net/url"
+
+	"github.com/pkg/errors"
 )
 
 // Client holds a connection to a FreeIPA server.
@@ -73,7 +75,7 @@ func Connect(host string, tspt *http.Transport, user, pw string) (*Client, error
 		pw:   pw,
 	}
 	if e := c.login(); e != nil {
-		return nil, fmt.Errorf("initial login failed: %v", e)
+		return nil, errors.WithMessage(e, "initial login failed")
 	}
 	return c, nil
 }
