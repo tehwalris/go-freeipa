@@ -89,7 +89,7 @@ func (c *Client) exec(req *request) (io.ReadCloser, error) {
 	if res.StatusCode == http.StatusUnauthorized {
 		res.Body.Close()
 		if e := c.login(); e != nil {
-			return nil, fmt.Errorf("renewed login failed: %v", e)
+			return nil, errors.WithMessage(e, "renewed login failed")
 		}
 		res, e = c.sendRequest(req)
 		if e != nil {
@@ -116,13 +116,7 @@ func (c *Client) login() error {
 
 	if res.StatusCode != http.StatusOK {
 		if res.StatusCode == http.StatusUnauthorized {
-			if rejectionReason := res.Header.Get("X-Ipa-Rejection-Reason"); rejectionReason == "password-expired" {
-				return &Error{
-					Message: rejectionReason,
-					Name:    rejectionReason,
-					Code:    PasswordExpiredCode,
-				}
-			}
+			return unauthorizedHTTPResponseToFreeipaError(res)
 		}
 		return fmt.Errorf("unexpected http status code: %v", res.StatusCode)
 	}
