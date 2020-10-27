@@ -31,17 +31,25 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"net/http/cookiejar"
 	"net/url"
+
+	k5client "github.com/jcmturner/gokrb5/v8/client"
+	k5config "github.com/jcmturner/gokrb5/v8/config"
+	"github.com/jcmturner/gokrb5/v8/keytab"
+	"github.com/jcmturner/gokrb5/v8/spnego"
+	"github.com/pkg/errors"
 )
 
 // Client holds a connection to a FreeIPA server.
 type Client struct {
-	host string
-	hc   *http.Client
-	user string
-	pw   string
+	host     string
+	hc       *http.Client
+	user     string
+	pw       string
+	k5client *k5client.Client
 }
 
 // Error is an error returned by the FreeIPA server in a JSON response.
@@ -78,6 +86,46 @@ func Connect(host string, tspt *http.Transport, user, pw string) (*Client, error
 	return c, nil
 }
 
+func ConnectWithKerberos(host string, tspt *http.Transport, k5ConnectOpts *KerberosConnectOptions) (*Client, error) {
+	jar, e := cookiejar.New(&cookiejar.Options{
+		PublicSuffixList: nil, // this should be fine, since we only use one server
+	})
+	if e != nil {
+		return nil, e
+	}
+
+	krb5Config, err := k5config.NewFromReader(k5ConnectOpts.Krb5ConfigReader)
+	if err != nil {
+		return nil, errors.WithMessage(err, "reading kerberos configuration")
+	}
+
+	ktBytes, err := ioutil.ReadAll(k5ConnectOpts.KeytabReader)
+	if err != nil {
+		return nil, errors.WithMessage(err, "reading keytab")
+	}
+
+	kt := keytab.New()
+	if err := kt.Unmarshal(ktBytes); err != nil {
+		return nil, errors.WithMessage(err, "parsing keytab")
+	}
+
+	k5client := k5client.NewWithKeytab(k5ConnectOpts.Username, k5ConnectOpts.Realm, kt, krb5Config)
+
+	c := &Client{
+		host: host,
+		hc: &http.Client{
+			Transport: tspt,
+			Jar:       jar,
+		},
+		user:     k5ConnectOpts.Username,
+		k5client: k5client,
+	}
+	if e := c.login(); e != nil {
+		return nil, fmt.Errorf("initial login falied: %v", e)
+	}
+	return c, nil
+}
+
 func (c *Client) exec(req *request) (io.ReadCloser, error) {
 	res, e := c.sendRequest(req)
 	if e != nil {
@@ -103,6 +151,10 @@ func (c *Client) exec(req *request) (io.ReadCloser, error) {
 }
 
 func (c *Client) login() error {
+	if c.k5client != nil {
+		return c.loginWithKerberos()
+	}
+
 	data := url.Values{
 		"user":     []string{c.user},
 		"password": []string{c.pw},
@@ -114,6 +166,30 @@ func (c *Client) login() error {
 	if res.StatusCode != http.StatusOK {
 		return fmt.Errorf("unexpected http status code: %v", res.StatusCode)
 	}
+	return nil
+}
+
+func (c *Client) loginWithKerberos() error {
+
+	k5LoginEndpoint := fmt.Sprintf("https://%s/ipa/session/login_kerberos", c.host)
+	spnegoCl := spnego.NewClient(c.k5client, c.hc, "")
+
+	req, err := http.NewRequest("POST", k5LoginEndpoint, nil)
+	if err != nil {
+		return errors.WithMessage(err, "building login HTTP request")
+	}
+
+	req.Header.Add("Referer", fmt.Sprintf("https://%s/ipa", c.host))
+
+	res, err := spnegoCl.Do(req)
+	if err != nil {
+		return errors.Wrap(err, "logging in using Kerberos")
+	}
+
+	if res.StatusCode != http.StatusOK {
+		return fmt.Errorf("unexpected http status code: %v", res.StatusCode)
+	}
+
 	return nil
 }
 
