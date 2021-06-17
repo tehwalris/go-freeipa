@@ -158,7 +158,8 @@ func loadSchema() (*Schema, error) {
 			// even though the schema doesn't say so. Assuming they are multivalued
 			// will work even if they end up actually being single-valued.
 			for _, p := range c.Params {
-				if strings.HasPrefix(p.Name, "member_") || strings.HasPrefix(p.Name, "memberof_") {
+				if strings.HasPrefix(p.Name, "member_") || strings.HasPrefix(p.Name, "memberof_") ||
+					strings.HasPrefix(p.Name, "memberindirect_") || strings.HasPrefix(p.Name, "memberofindirect_"){
 					p.Multivalue = true
 				}
 			}
