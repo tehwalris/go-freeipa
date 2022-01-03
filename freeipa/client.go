@@ -1,4 +1,7 @@
 /*
+This package is UNMAINTANED!!!
+See https://github.com/tehwalris/go-freeipa for details
+
 Package freeipa provides a client for the FreeIPA API.
 
 It provides access to almost all methods available through the API.

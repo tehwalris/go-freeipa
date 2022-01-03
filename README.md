@@ -1,3 +1,9 @@
+# Unmaintained!!!
+
+This project is unmaintained. I no longer work with FreeIPA and can not justify
+maintaining this project in my free time. Consider using one of the
+[forks](https://github.com/ccin2p3/go-freeipa/network).
+
 # go-freeipa
 
 A generated golang client for the FreeIPA API.
