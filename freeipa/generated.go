@@ -83037,31 +83037,31 @@ Indirect Member groups
 Indirect Member of group
 
     */
-    MemberofindirectGroup *string `json:"memberofindirect_group,omitempty"`
+    MemberofindirectGroup *[]string `json:"memberofindirect_group,omitempty"`
   
     /*
 Indirect Member of netgroup
 
     */
-    MemberofindirectNetgroup *string `json:"memberofindirect_netgroup,omitempty"`
+    MemberofindirectNetgroup *[]string `json:"memberofindirect_netgroup,omitempty"`
   
     /*
 Indirect Member of role
 
     */
-    MemberofindirectRole *string `json:"memberofindirect_role,omitempty"`
+    MemberofindirectRole *[]string `json:"memberofindirect_role,omitempty"`
   
     /*
 Indirect Member of Sudo rule
 
     */
-    MemberofindirectSudorule *string `json:"memberofindirect_sudorule,omitempty"`
+    MemberofindirectSudorule *[]string `json:"memberofindirect_sudorule,omitempty"`
   
     /*
 Indirect Member of HBAC rule
 
     */
-    MemberofindirectHbacrule *string `json:"memberofindirect_hbacrule,omitempty"`
+    MemberofindirectHbacrule *[]string `json:"memberofindirect_hbacrule,omitempty"`
   }
 
 func (t *Group) String() string {
@@ -83586,15 +83586,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectGroup = &plainV
+        out.MemberofindirectGroup = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectGroup = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectGroup: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectGroup = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectGroup: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -83623,15 +83618,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectNetgroup = &plainV
+        out.MemberofindirectNetgroup = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectNetgroup = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectNetgroup: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectNetgroup = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -83660,15 +83650,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectRole = &plainV
+        out.MemberofindirectRole = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectRole = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectRole: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectRole = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectRole: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -83697,15 +83682,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectSudorule = &plainV
+        out.MemberofindirectSudorule = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectSudorule = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectSudorule: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectSudorule = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectSudorule: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -83734,15 +83714,10 @@ func (out *Group) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectHbacrule = &plainV
+        out.MemberofindirectHbacrule = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectHbacrule = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectHbacrule = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -85064,31 +85039,31 @@ Member of HBAC rule
 Indirect Member of netgroup
 
     */
-    MemberofindirectNetgroup *string `json:"memberofindirect_netgroup,omitempty"`
+    MemberofindirectNetgroup *[]string `json:"memberofindirect_netgroup,omitempty"`
   
     /*
 Indirect Member of host-group
 
     */
-    MemberofindirectHostgroup *string `json:"memberofindirect_hostgroup,omitempty"`
+    MemberofindirectHostgroup *[]string `json:"memberofindirect_hostgroup,omitempty"`
   
     /*
 Indirect Member of role
 
     */
-    MemberofindirectRole *string `json:"memberofindirect_role,omitempty"`
+    MemberofindirectRole *[]string `json:"memberofindirect_role,omitempty"`
   
     /*
 Indirect Member of Sudo rule
 
     */
-    MemberofindirectSudorule *string `json:"memberofindirect_sudorule,omitempty"`
+    MemberofindirectSudorule *[]string `json:"memberofindirect_sudorule,omitempty"`
   
     /*
 Indirect Member of HBAC rule
 
     */
-    MemberofindirectHbacrule *string `json:"memberofindirect_hbacrule,omitempty"`
+    MemberofindirectHbacrule *[]string `json:"memberofindirect_hbacrule,omitempty"`
   
     /*
 Keytab
@@ -86574,15 +86549,10 @@ func (out *Host) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectNetgroup = &plainV
+        out.MemberofindirectNetgroup = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectNetgroup = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectNetgroup: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectNetgroup = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -86611,15 +86581,10 @@ func (out *Host) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectHostgroup = &plainV
+        out.MemberofindirectHostgroup = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectHostgroup = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectHostgroup: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectHostgroup = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectHostgroup: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -86648,15 +86613,10 @@ func (out *Host) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectRole = &plainV
+        out.MemberofindirectRole = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectRole = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectRole: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectRole = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectRole: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -86685,15 +86645,10 @@ func (out *Host) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectSudorule = &plainV
+        out.MemberofindirectSudorule = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectSudorule = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectSudorule: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectSudorule = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectSudorule: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -86722,15 +86677,10 @@ func (out *Host) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectHbacrule = &plainV
+        out.MemberofindirectHbacrule = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectHbacrule = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectHbacrule = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -87211,19 +87161,19 @@ Indirect Member host-groups
 Indirect Member of host-group
 
     */
-    MemberofindirectHostgroup *string `json:"memberofindirect_hostgroup,omitempty"`
+    MemberofindirectHostgroup *[]string `json:"memberofindirect_hostgroup,omitempty"`
   
     /*
 Indirect Member of Sudo rule
 
     */
-    MemberofindirectSudorule *string `json:"memberofindirect_sudorule,omitempty"`
+    MemberofindirectSudorule *[]string `json:"memberofindirect_sudorule,omitempty"`
   
     /*
 Indirect Member of HBAC rule
 
     */
-    MemberofindirectHbacrule *string `json:"memberofindirect_hbacrule,omitempty"`
+    MemberofindirectHbacrule *[]string `json:"memberofindirect_hbacrule,omitempty"`
   }
 
 func (t *Hostgroup) String() string {
@@ -87633,15 +87583,10 @@ func (out *Hostgroup) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectHostgroup = &plainV
+        out.MemberofindirectHostgroup = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectHostgroup = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectHostgroup: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectHostgroup = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectHostgroup: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -87670,15 +87615,10 @@ func (out *Hostgroup) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectSudorule = &plainV
+        out.MemberofindirectSudorule = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectSudorule = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectSudorule: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectSudorule = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectSudorule: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -87707,15 +87647,10 @@ func (out *Hostgroup) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectHbacrule = &plainV
+        out.MemberofindirectHbacrule = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectHbacrule = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectHbacrule = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -98698,31 +98633,31 @@ Member of HBAC rule
 Indirect Member of group
 
     */
-    MemberofindirectGroup *string `json:"memberofindirect_group,omitempty"`
+    MemberofindirectGroup *[]string `json:"memberofindirect_group,omitempty"`
   
     /*
 Indirect Member of netgroup
 
     */
-    MemberofindirectNetgroup *string `json:"memberofindirect_netgroup,omitempty"`
+    MemberofindirectNetgroup *[]string `json:"memberofindirect_netgroup,omitempty"`
   
     /*
 Indirect Member of role
 
     */
-    MemberofindirectRole *string `json:"memberofindirect_role,omitempty"`
+    MemberofindirectRole *[]string `json:"memberofindirect_role,omitempty"`
   
     /*
 Indirect Member of Sudo rule
 
     */
-    MemberofindirectSudorule *string `json:"memberofindirect_sudorule,omitempty"`
+    MemberofindirectSudorule *[]string `json:"memberofindirect_sudorule,omitempty"`
   
     /*
 Indirect Member of HBAC rule
 
     */
-    MemberofindirectHbacrule *string `json:"memberofindirect_hbacrule,omitempty"`
+    MemberofindirectHbacrule *[]string `json:"memberofindirect_hbacrule,omitempty"`
   
     /*
 Kerberos keys available
@@ -100605,15 +100540,10 @@ func (out *Stageuser) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectGroup = &plainV
+        out.MemberofindirectGroup = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectGroup = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectGroup: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectGroup = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectGroup: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -100642,15 +100572,10 @@ func (out *Stageuser) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectNetgroup = &plainV
+        out.MemberofindirectNetgroup = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectNetgroup = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectNetgroup: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectNetgroup = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -100679,15 +100604,10 @@ func (out *Stageuser) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectRole = &plainV
+        out.MemberofindirectRole = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectRole = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectRole: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectRole = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectRole: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -100716,15 +100636,10 @@ func (out *Stageuser) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectSudorule = &plainV
+        out.MemberofindirectSudorule = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectSudorule = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectSudorule: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectSudorule = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectSudorule: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -100753,15 +100668,10 @@ func (out *Stageuser) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectHbacrule = &plainV
+        out.MemberofindirectHbacrule = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectHbacrule = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectHbacrule = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -104562,31 +104472,31 @@ Member of HBAC rule
 Indirect Member of group
 
     */
-    MemberofindirectGroup *string `json:"memberofindirect_group,omitempty"`
+    MemberofindirectGroup *[]string `json:"memberofindirect_group,omitempty"`
   
     /*
 Indirect Member of netgroup
 
     */
-    MemberofindirectNetgroup *string `json:"memberofindirect_netgroup,omitempty"`
+    MemberofindirectNetgroup *[]string `json:"memberofindirect_netgroup,omitempty"`
   
     /*
 Indirect Member of role
 
     */
-    MemberofindirectRole *string `json:"memberofindirect_role,omitempty"`
+    MemberofindirectRole *[]string `json:"memberofindirect_role,omitempty"`
   
     /*
 Indirect Member of Sudo rule
 
     */
-    MemberofindirectSudorule *string `json:"memberofindirect_sudorule,omitempty"`
+    MemberofindirectSudorule *[]string `json:"memberofindirect_sudorule,omitempty"`
   
     /*
 Indirect Member of HBAC rule
 
     */
-    MemberofindirectHbacrule *string `json:"memberofindirect_hbacrule,omitempty"`
+    MemberofindirectHbacrule *[]string `json:"memberofindirect_hbacrule,omitempty"`
   
     /*
 Kerberos keys available
@@ -106549,15 +106459,10 @@ func (out *User) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectGroup = &plainV
+        out.MemberofindirectGroup = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectGroup = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectGroup: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectGroup = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectGroup: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -106586,15 +106491,10 @@ func (out *User) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectNetgroup = &plainV
+        out.MemberofindirectNetgroup = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectNetgroup = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectNetgroup: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectNetgroup = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectNetgroup: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -106623,15 +106523,10 @@ func (out *User) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectRole = &plainV
+        out.MemberofindirectRole = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectRole = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectRole: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectRole = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectRole: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -106660,15 +106555,10 @@ func (out *User) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectSudorule = &plainV
+        out.MemberofindirectSudorule = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectSudorule = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectSudorule: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectSudorule = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectSudorule: %v (%v)", raw, reflect.TypeOf(raw))
       }
@@ -106697,15 +106587,10 @@ func (out *User) UnmarshalJSON(data []byte) error {
     }
     
       if plainOk {
-        out.MemberofindirectHbacrule = &plainV
+        out.MemberofindirectHbacrule = &[]string{plainV}
       } else if sliceOk {
         
-          if len(sliceV) == 1 {
-            out.MemberofindirectHbacrule = &sliceV[0]
-          } else if len(sliceV) > 1 {
-            return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v; expected at most one element", raw)
-          }
-        
+        out.MemberofindirectHbacrule = &sliceV
       } else {
         return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v (%v)", raw, reflect.TypeOf(raw))
       }
