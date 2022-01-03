@@ -2,7 +2,7 @@
 
 This project is unmaintained. I no longer work with FreeIPA and can not justify
 maintaining this project in my free time. Consider using one of the
-[forks](https://github.com/ccin2p3/go-freeipa/network).
+[forks](https://github.com/tehwalris/go-freeipa/network).
 
 # go-freeipa
 
