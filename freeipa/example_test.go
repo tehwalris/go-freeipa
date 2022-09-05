@@ -6,6 +6,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/tehwalris/go-freeipa/freeipa"
@@ -66,4 +67,52 @@ func Example_errorHandling() {
 
 	// Output: FreeIPA error 4001: somemissinguid: user not found
 	// (matched expected error code)
+}
+
+func Example_kerberosLogin() {
+
+	krb5Principal := "host/cc.in2p3.fr"
+	krb5Realm := "CC.IN2P3.FR"
+
+	krb5KtFd, err := os.Open("/etc/krb5.keytab")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer krb5KtFd.Close()
+
+	krb5Fd, err := os.Open("/etc/krb5.conf")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer krb5Fd.Close()
+
+	krb5ConnectOption := &freeipa.KerberosConnectOptions{
+		Krb5ConfigReader: krb5Fd,
+		KeytabReader:     krb5KtFd,
+		Username:         krb5Principal,
+		Realm:            krb5Realm,
+	}
+
+	tspt := &http.Transport{
+		TLSClientConfig: &tls.Config{
+			InsecureSkipVerify: false,
+		},
+	}
+
+	c, err := freeipa.ConnectWithKerberos("dc1.test.local", tspt, krb5ConnectOption)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	sizeLimit := 5
+	res, err := c.UserFind("", &freeipa.UserFindArgs{}, &freeipa.UserFindOptionalArgs{
+		Sizelimit: &sizeLimit,
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, user := range res.Result {
+		fmt.Printf("User[%s] HOME=%s\n", user.UID, *user.Homedirectory)
+	}
 }
