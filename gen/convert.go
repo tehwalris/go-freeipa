@@ -46,7 +46,7 @@ func toGoType(ipaType string) string {
 	case "Principal":
 		return "string"
 	case "DNSName":
-		return "string"
+		return "interface{}"
 	case "Decimal":
 		return "float64"
 	case "Certificate":
